@@ -40,7 +40,7 @@ export default function Navbar() {
           </span>
           <span className="leading-tight">
             <span className="block font-heading text-lg font-bold text-ink">edVenture</span>
-            <span className="block text-[11px] font-medium text-muted">Your eLearning Solution</span>
+            <span className="block text-[11px] font-medium text-muted">Innovative eLearning Solutions</span>
           </span>
         </Link>
 
@@ -50,9 +50,6 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <Link href="/contact" className="btn-gradient px-5 py-2.5 text-sm font-semibold">
-            Get Started
-          </Link>
         </nav>
 
         <button
@@ -82,13 +79,6 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <Link
-            href="/contact"
-            onClick={() => setOpen(false)}
-            className="btn-gradient mt-2 px-5 py-2.5 text-center text-sm font-semibold"
-          >
-            Get Started
-          </Link>
         </nav>
       </div>
     </header>

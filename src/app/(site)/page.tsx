@@ -1,59 +1,65 @@
 import Link from "next/link";
 import { Badge, SectionHeading } from "@/components/UI";
-import { BigEIllustration } from "@/components/HeroIllustration";
-import { brands, servicesSnapshot, founderPhoto } from "@/data/site";
+import { servicesSnapshot } from "@/data/site";
 
 const differentiators = [
   {
-    emoji: "📖",
-    tint: "from-indigo-50 to-blue-50",
+    img: "/images/Story-First Design.png",
     title: "Story-First Design",
     desc: "Every module we build has a narrative spine — because learners engage with stories, not slides.",
+    bg: "bg-indigo-50/80",
   },
   {
-    emoji: "🚀",
-    tint: "from-blue-50 to-indigo-50",
+    img: "/images/Faster TAT.png",
     title: "Faster TAT",
     desc: "We deliver without cutting corners. Fast turnarounds that don't sacrifice craft.",
+    bg: "bg-blue-50",
+    highlight: true,
   },
   {
-    emoji: "🏆",
-    tint: "from-purple-50 to-indigo-50",
+    img: "/images/Uncompromised Quality.png",
     title: "Uncompromised Quality",
     desc: "From script to screen, we obsess over detail — visuals, interactions, and learning outcomes.",
+    bg: "bg-purple-50/80",
   },
 ];
+
+const serviceIcons: Record<string, string> = {
+  "LMS Setup & Deployment": "M4 6a2 2 0 012-2h12a2 2 0 012 2v8a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm2 0v8h12V6H6zm3 2h6v2H9V8zm0 3h4v2H9v-2z",
+  "SCORM Modules": "M4 4h16v16H4V4zm2 2v12h12V6H6zm3 3h6v2H9V9zm0 4h4v2H9v-2z",
+  "Gamified Learning": "M6 3h12l4 6-10 10L2 9l4-6zm2.5 2L5.2 9 12 15.8 18.8 9l-3.3-4H8.5zM12 11a2 2 0 100 4 2 2 0 000-4z",
+  "ILT / VILT Decks": "M3 3h18v2H3V3zm0 4h18v2H3V7zm0 4h12v2H3v-2zm0 4h18v2H3v-2z",
+  "Microlearning Nuggets": "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14l-5-5 1.41-1.41L10 13.17l7.59-7.59L19 7l-9 9z",
+  "Video-Based Training": "M17 10.5V7a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h12a1 1 0 001-1v-3.5l4 4v-11l-4 4zM15 15H5V8h10v7z",
+};
 
 export default function Home() {
   return (
     <div>
       {/* HERO */}
-      <section className="mx-auto grid max-w-[1200px] items-center gap-10 px-5 py-16 md:grid-cols-2 md:py-24">
+      <section className="mx-auto grid max-w-[1200px] items-center gap-10 px-5 py-16 md:grid-cols-2 md:py-20">
         <div>
-          <Badge>⭐ Elevating eLearning Experiences</Badge>
-          <h1 className="mt-5 font-heading text-[38px] font-bold leading-tight text-ink sm:text-[44px] md:text-[48px]">
-            Learning That <span className="gradient-text">Sticks.</span>
+          <Badge>⭐ ELEVATING ELEARNING EXPERIENCES</Badge>
+          <h1 className="mt-6 font-heading text-[40px] font-bold leading-[1.15] text-ink sm:text-[48px] md:text-[56px]">
+            Learning That{" "}
+            <span style={{ color: "#7c3aed" }}>Sticks.</span>
             <br />
-            Stories That <span className="gradient-text">Move.</span>
+            Stories That{" "}
+            <span style={{ color: "#3b82f6" }}>Move.</span>
           </h1>
           <div className="section-underline my-6" />
-          <p className="max-w-lg text-base leading-relaxed text-muted">
+          <p className="max-w-lg text-base leading-relaxed text-muted md:text-lg">
             We design eLearning experiences that your learners actually remember — crafted with
             storytelling at the core, delivered with speed, and built to perform.
           </p>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <Link href="/contact" className="btn-gradient px-7 py-3 text-sm font-semibold">
-              Book a Free Discovery Call →
-            </Link>
-            <Link
-              href="/work"
-              className="rounded-full border border-slate-300 px-7 py-3 text-sm font-semibold text-ink transition hover:border-primary hover:text-primary"
-            >
-              See Our Work
-            </Link>
-          </div>
         </div>
-        <BigEIllustration />
+        <div className="relative">
+          <img
+            src="/images/bg image 1.png"
+            alt="eLearning illustration"
+            className="w-full object-contain"
+          />
+        </div>
       </section>
 
       {/* TRUSTED BRANDS */}
@@ -62,15 +68,30 @@ export default function Home() {
           <p className="mb-8 text-center text-xs font-bold uppercase tracking-[2px] text-muted">
             Trusted by leading brands:
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
-            {brands.map((b) => (
-              <span
-                key={b}
-                className="font-heading text-lg font-bold tracking-wide text-slate-400 grayscale transition hover:text-primary hover:grayscale-0"
-              >
-                {b}
-              </span>
-            ))}
+          <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
+            <img
+              src="/images/tata power solar_logo.png"
+              alt="Tata Power Solar"
+              className="h-10 object-contain opacity-80 transition hover:opacity-100"
+            />
+            <img
+              src="/images/Tata Power_logo.png"
+              alt="Tata Power"
+              className="h-8 object-contain opacity-80 transition hover:opacity-100"
+            />
+            <span className="font-heading text-2xl font-bold tracking-tight text-blue-700 opacity-80">
+              Reliance
+            </span>
+            <img
+              src="/images/jiva.pg.png"
+              alt="Jiva Ayurveda"
+              className="h-8 object-contain opacity-80 transition hover:opacity-100"
+            />
+            <img
+              src="/images/virtuoskill.png.png"
+              alt="Virtuoskill"
+              className="h-8 object-contain opacity-80 transition hover:opacity-100"
+            />
             <span className="italic text-muted">| and more...</span>
           </div>
         </div>
@@ -83,15 +104,21 @@ export default function Home() {
           {differentiators.map((d) => (
             <div
               key={d.title}
-              className="card-hover rounded-2xl border border-slate-100 bg-white p-7 shadow-sm"
+              className={`card-hover overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm ${
+                d.highlight ? "ring-2 ring-blue-200 bg-blue-50/50" : ""
+              }`}
             >
-              <div
-                className={`mb-5 flex h-32 items-center justify-center rounded-xl bg-gradient-to-br ${d.tint} text-6xl`}
-              >
-                {d.emoji}
+              <div className={`${d.bg} flex items-center justify-center p-4`}>
+                <img
+                  src={d.img}
+                  alt={d.title}
+                  className="h-40 w-full object-contain"
+                />
               </div>
-              <h3 className="mb-2 font-heading text-lg font-bold text-ink">{d.title}</h3>
-              <p className="text-sm leading-relaxed text-muted">{d.desc}</p>
+              <div className="p-6">
+                <h3 className="mb-2 font-heading text-lg font-bold text-ink">{d.title}</h3>
+                <p className="text-sm leading-relaxed text-muted">{d.desc}</p>
+              </div>
             </div>
           ))}
         </div>
@@ -101,14 +128,18 @@ export default function Home() {
       <section className="bg-white py-20">
         <div className="mx-auto max-w-[1200px] px-5">
           <SectionHeading title="Services Snapshot" />
-          <div className="mt-10 flex gap-4 overflow-x-auto pb-4">
+          <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
             {servicesSnapshot.map((s) => (
               <div
                 key={s.label}
-                className="card-hover flex min-w-[220px] flex-shrink-0 items-center gap-3 rounded-2xl border border-slate-100 bg-lightbg px-5 py-4"
+                className="card-hover flex items-center gap-3 rounded-2xl border border-slate-100 bg-lightbg px-4 py-4"
               >
-                <span className="text-2xl">{s.icon}</span>
-                <span className="text-sm font-semibold text-ink">{s.label}</span>
+                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-indigo-50 text-primary">
+                  <svg viewBox="0 0 24 24" className="h-5 w-5 fill-current">
+                    <path d={serviceIcons[s.label] || "M12 2a10 10 0 100 20 10 10 0 000-20z"} />
+                  </svg>
+                </div>
+                <span className="text-xs font-semibold text-ink leading-tight">{s.label}</span>
               </div>
             ))}
           </div>
@@ -130,12 +161,12 @@ export default function Home() {
                 (testimonial placeholder)
               </p>
             </div>
-            <div className="hidden justify-self-end md:flex">
-              <div className="relative h-32 w-32">
-                <div className="absolute left-0 top-0 flex h-20 w-20 items-center justify-center rounded-2xl rounded-bl-none bg-primary text-3xl text-white shadow-lg">
-                  🤍
+            <div className="hidden justify-self-end md:block">
+              <div className="relative h-36 w-36">
+                <div className="absolute left-0 top-0 flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-blue-600 text-4xl text-white shadow-lg">
+                  ❤️
                 </div>
-                <div className="absolute bottom-0 right-0 flex h-16 w-16 items-center justify-center rounded-2xl rounded-br-none bg-purple text-2xl text-white shadow-lg">
+                <div className="absolute bottom-0 right-0 flex h-18 w-18 items-center justify-center rounded-full bg-gradient-to-br from-purple-500 to-purple-600 text-2xl text-white shadow-lg">
                   💬
                 </div>
               </div>
@@ -152,8 +183,12 @@ export default function Home() {
       {/* FOUNDER */}
       <section className="mx-auto max-w-[1200px] px-5 pb-24">
         <div className="grid items-center gap-10 md:grid-cols-[280px_1fr]">
-          <div className="mx-auto h-64 w-64 overflow-hidden rounded-3xl border-4 border-white shadow-xl">
-            <img src={founderPhoto} alt="Vartika Jain, Founder" className="h-full w-full object-cover" />
+          <div className="mx-auto overflow-hidden rounded-3xl shadow-xl">
+            <img
+              src="/images/founder.png"
+              alt="Vartika Jain, Founder"
+              className="h-72 w-72 object-cover md:h-80 md:w-80"
+            />
           </div>
           <div>
             <p className="text-lg italic leading-relaxed text-ink md:text-xl">
@@ -162,15 +197,40 @@ export default function Home() {
             </p>
             <p className="mt-4 text-sm text-muted">
               — <span className="font-semibold gradient-text">Vartika Jain</span>,{" "}
-              <span className="font-semibold">Founder & Instructional Designer</span>
+              <span className="font-semibold">Founder &amp; Instructional Designer</span>
             </p>
             <Link
-              href="/about"
+              href="/philosophy"
               className="mt-6 inline-flex items-center gap-2 rounded-full border border-slate-300 px-6 py-2.5 text-sm font-semibold text-ink transition hover:border-primary hover:text-primary"
             >
-              Meet the team →
+              Our Philosophy →
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* BOTTOM CTA BANNER */}
+      <section className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 py-8">
+        <div className="mx-auto flex max-w-[1200px] flex-wrap items-center justify-between gap-6 px-5">
+          <div className="flex items-center gap-4">
+            <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full bg-white text-2xl shadow-md">
+              📅
+            </div>
+            <div>
+              <p className="text-base font-medium text-white md:text-lg">
+                Not sure which format fits your need?
+              </p>
+              <p className="text-sm text-indigo-200 md:text-base">
+                Book a Free Discovery Call — We'll help you figure it out.
+              </p>
+            </div>
+          </div>
+          <Link
+            href="/contact"
+            className="rounded-full bg-white px-8 py-3 text-sm font-bold text-ink shadow-md transition hover:shadow-lg"
+          >
+            Book a free Discovery call →
+          </Link>
         </div>
       </section>
     </div>
