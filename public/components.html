@@ -1,0 +1,416 @@
+<!-- ============================================
+     edVenture eLearning Hub - HTML Component Snippets
+     Reusable components for the website
+     ============================================ -->
+
+<!-- ============================================
+     REQUIRED EXTERNAL RESOURCES
+     ============================================ -->
+<!-- 
+Include in <head>:
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+Include before </body>:
+<script src="shared.js"></script>
+-->
+
+<!-- ============================================
+     1. NAVBAR COMPONENT
+     ============================================ -->
+<nav class="navbar">
+  <div class="navbar-container">
+    <!-- Logo Section -->
+    <a href="/" class="navbar-logo">
+      <div class="logo-icon">e</div>
+      <div class="logo-text">
+        <span class="logo-title">edVenture</span>
+        <span class="logo-tagline">Your eLearning Solution</span>
+      </div>
+    </a>
+    
+    <!-- Navigation Links -->
+    <ul class="navbar-nav">
+      <li><a href="/" class="active"><i class="fa-solid fa-house"></i> Home</a></li>
+      <li><a href="/about"><i class="fa-solid fa-circle-info"></i> About</a></li>
+      <li><a href="/services"><i class="fa-solid fa-layer-group"></i> Services</a></li>
+      <li><a href="/work"><i class="fa-solid fa-briefcase"></i> Work</a></li>
+      <li><a href="/contact"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+    </ul>
+    
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-menu-toggle" aria-label="Toggle menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- ============================================
+     2. STICKY BOTTOM CTA BAR
+     ============================================ -->
+<div class="sticky-cta-bar">
+  <div class="sticky-cta-container">
+    <div class="cta-message">
+      <span class="cta-icon"><i class="fa-solid fa-calendar-check"></i></span>
+      <p class="cta-text">
+        Not sure which format fits your need? Book a Free Discovery Call — We'll help you figure it out.
+      </p>
+    </div>
+    <button class="cta-button" data-cta="discovery-call">
+      Book a free Discovery call <i class="fa-solid fa-arrow-right"></i>
+    </button>
+  </div>
+</div>
+
+<!-- ============================================
+     3. FOOTER COMPONENT
+     ============================================ -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-grid">
+      <!-- Column 1: About -->
+      <div class="footer-column">
+        <h4>About edVenture</h4>
+        <p>
+          We design eLearning experiences that your learners actually remember — 
+          crafted with storytelling at the core, delivered with speed, and built to perform.
+        </p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/edventure-elearning-hub-2660b7242/" 
+             target="_blank" 
+             class="social-icon" 
+             aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a href="https://twitter.com/edventure" 
+             target="_blank" 
+             class="social-icon" 
+             aria-label="Twitter">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+          <a href="mailto:admin@edventurehub.com" 
+             class="social-icon" 
+             aria-label="Email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Column 2: Quick Links -->
+      <div class="footer-column">
+        <h4>Quick Links</h4>
+        <a href="/">Home</a>
+        <a href="/about">About Us</a>
+        <a href="/philosophy">Our Philosophy</a>
+        <a href="/work">Our Work</a>
+        <a href="/contact">Contact</a>
+      </div>
+      
+      <!-- Column 3: Services -->
+      <div class="footer-column">
+        <h4>Services</h4>
+        <a href="/services#lms">LMS Setup & Deployment</a>
+        <a href="/services#scorm">SCORM Modules</a>
+        <a href="/services#gamified">Gamified Learning</a>
+        <a href="/services#ilt-vilt">ILT / VILT Decks</a>
+        <a href="/services#microlearning">Microlearning Nuggets</a>
+        <a href="/services#video">Video-based Training</a>
+      </div>
+      
+      <!-- Column 4: Contact Info -->
+      <div class="footer-column">
+        <h4>Contact Us</h4>
+        <p>
+          <i class="fa-solid fa-envelope"></i> <a href="mailto:admin@edventurehub.com">admin@edventurehub.com</a>
+        </p>
+        <p>
+          <i class="fa-solid fa-phone"></i> <a href="tel:+919582232050">+91-9582232050</a>
+        </p>
+        <p>
+          <i class="fa-solid fa-location-dot"></i> Delhi, India
+        </p>
+      </div>
+    </div>
+    
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p>&copy; 2024 edVenture eLearning Hub. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================
+     4. REUSABLE BUTTON COMPONENTS
+     ============================================ -->
+
+<!-- Primary Button -->
+<button class="btn btn-primary">Get Started <i class="fa-solid fa-arrow-right"></i></button>
+<a href="#" class="btn btn-primary">Learn More <i class="fa-solid fa-circle-chevron-right"></i></a>
+
+<!-- Outlined Button -->
+<button class="btn btn-outline">View Services <i class="fa-solid fa-arrow-right"></i></button>
+<a href="#" class="btn btn-outline">Contact Us <i class="fa-solid fa-paper-plane"></i></a>
+
+<!-- White Outlined Button (for dark backgrounds) -->
+<button class="btn btn-white-outline">Book a Call <i class="fa-solid fa-phone"></i></button>
+
+<!-- ============================================
+     5. BADGE/TAG COMPONENT
+     ============================================ -->
+<span class="badge"><i class="fa-solid fa-star"></i> New</span>
+<span class="badge"><i class="fa-solid fa-fire"></i> Featured</span>
+<span class="badge"><i class="fa-solid fa-crown"></i> Popular</span>
+
+<!-- ============================================
+     6. CARD COMPONENT
+     ============================================ -->
+<div class="card">
+  <i class="fa-solid fa-book-open card-icon"></i>
+  <h3 class="card-title">Story-First Design</h3>
+  <p class="card-text">
+    Every module we build has a narrative spine — because learners engage with stories, 
+    not slides.
+  </p>
+</div>
+
+<!-- Card with Gradient Icon Circle -->
+<div class="card">
+  <div class="icon-circle">
+    <i class="fa-solid fa-bolt"></i>
+  </div>
+  <h3 class="card-title">Faster TAT</h3>
+  <p class="card-text">
+    We deliver without cutting corners. Fast turnarounds that don't sacrifice craft.
+  </p>
+</div>
+
+<!-- Card with Icon Box -->
+<div class="card">
+  <div class="icon-box">
+    <i class="fa-solid fa-gem"></i>
+  </div>
+  <h3 class="card-title">Premium Quality</h3>
+  <p class="card-text">
+    From script to screen, we obsess over detail — visuals, interactions, 
+    and learning outcomes.
+  </p>
+</div>
+
+<!-- ============================================
+     7. HERO SECTION EXAMPLE
+     ============================================ -->
+<section class="hero section pt-5">
+  <div class="container">
+    <div class="hero-content text-center">
+      <span class="badge mb-3"><i class="fa-solid fa-sparkles"></i> ELEARNING REDEFINED</span>
+      <h1 class="mb-3">
+        Learning That <span class="text-gradient">Sticks.</span><br>
+        Stories That <span class="text-gradient">Move.</span>
+      </h1>
+      <p class="mb-4" style="font-size: 18px; max-width: 600px; margin: 0 auto;">
+        We design eLearning experiences that your learners actually remember — 
+        crafted with storytelling at the core, delivered with speed, and built to perform.
+      </p>
+      <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+        <a href="#services" class="btn btn-primary">Explore Services <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="#contact" class="btn btn-outline">Book a Discovery Call <i class="fa-solid fa-calendar-check"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     8. SECTION WITH CARDS GRID
+     ============================================ -->
+<section class="section">
+  <div class="container">
+    <h2 class="text-center mb-5">What Makes Us Different</h2>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+      <div class="card">
+        <div class="icon-circle">
+          <i class="fa-solid fa-book-open"></i>
+        </div>
+        <h3 class="card-title">Story-First Design</h3>
+        <p class="card-text">
+          Every module we build has a narrative spine — because learners engage with stories, 
+          not slides.
+        </p>
+      </div>
+      
+      <div class="card">
+        <div class="icon-circle">
+          <i class="fa-solid fa-bolt"></i>
+        </div>
+        <h3 class="card-title">Faster TAT</h3>
+        <p class="card-text">
+          We deliver without cutting corners. Fast turnarounds that don't sacrifice craft.
+        </p>
+      </div>
+      
+      <div class="card">
+        <div class="icon-circle">
+          <i class="fa-solid fa-gem"></i>
+        </div>
+        <h3 class="card-title">Uncompromised Quality</h3>
+        <p class="card-text">
+          From script to screen, we obsess over detail — visuals, interactions, 
+          and learning outcomes.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     9. FULL PAGE HTML TEMPLATE
+     ============================================ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="edVenture eLearning Hub - Learning That Sticks, Stories That Move">
+  <title>edVenture eLearning Hub - Your eLearning Solution</title>
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Favicon (optional) -->
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="/" class="navbar-logo">
+        <div class="logo-icon">e</div>
+        <div class="logo-text">
+          <span class="logo-title">edVenture</span>
+          <span class="logo-tagline">Your eLearning Solution</span>
+        </div>
+      </a>
+      
+      <ul class="navbar-nav">
+        <li><a href="/" class="active"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="/about"><i class="fa-solid fa-circle-info"></i> About</a></li>
+        <li><a href="/services"><i class="fa-solid fa-layer-group"></i> Services</a></li>
+        <li><a href="/work"><i class="fa-solid fa-briefcase"></i> Work</a></li>
+        <li><a href="/contact"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+      </ul>
+      
+      <button class="mobile-menu-toggle" aria-label="Toggle menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+  
+  <!-- MAIN CONTENT -->
+  <main style="padding-top: 80px;">
+    <!-- Your page content goes here -->
+    
+    <section class="hero section">
+      <div class="container text-center">
+        <h1>Welcome to edVenture</h1>
+        <p>Your eLearning Solution</p>
+      </div>
+    </section>
+    
+  </main>
+  
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h4>About edVenture</h4>
+          <p>
+            We design eLearning experiences that your learners actually remember — 
+            crafted with storytelling at the core, delivered with speed, and built to perform.
+          </p>
+          <div class="footer-social">
+            <a href="https://www.linkedin.com/in/edventure-elearning-hub-2660b7242/" 
+               target="_blank" 
+               class="social-icon" 
+               aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://twitter.com/edventure" 
+               target="_blank" 
+               class="social-icon" 
+               aria-label="Twitter">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="mailto:admin@edventurehub.com" 
+               class="social-icon" 
+               aria-label="Email">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <a href="/">Home</a>
+          <a href="/about">About Us</a>
+          <a href="/philosophy">Our Philosophy</a>
+          <a href="/work">Our Work</a>
+          <a href="/contact">Contact</a>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Services</h4>
+          <a href="/services#lms">LMS Setup & Deployment</a>
+          <a href="/services#scorm">SCORM Modules</a>
+          <a href="/services#gamified">Gamified Learning</a>
+          <a href="/services#ilt-vilt">ILT / VILT Decks</a>
+          <a href="/services#microlearning">Microlearning Nuggets</a>
+          <a href="/services#video">Video-based Training</a>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Contact Us</h4>
+          <p><i class="fa-solid fa-envelope"></i> <a href="mailto:admin@edventurehub.com">admin@edventurehub.com</a></p>
+          <p><i class="fa-solid fa-phone"></i> <a href="tel:+919582232050">+91-9582232050</a></p>
+          <p><i class="fa-solid fa-location-dot"></i> Delhi, India</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2024 edVenture eLearning Hub. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- STICKY CTA BAR -->
+  <div class="sticky-cta-bar">
+    <div class="sticky-cta-container">
+      <div class="cta-message">
+        <span class="cta-icon"><i class="fa-solid fa-calendar-check"></i></span>
+        <p class="cta-text">
+          Not sure which format fits your need? Book a Free Discovery Call — We'll help you figure it out.
+        </p>
+      </div>
+      <button class="cta-button" data-cta="discovery-call">
+        Book a free Discovery call <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+  
+  <!-- JavaScript -->
+  <script src="shared.js"></script>
+</body>
+</html>
+
+<!-- ============================================
+     USAGE NOTES:
+     
+     1. Include styles.css in the <head> of your HTML
+     2. Include shared.js before closing </body> tag
+     3. Copy individual components as needed
+     4. Adjust content, links, and styles as required
+     5. For React/Next.js, convert to JSX components
+     
+     ============================================ -->
