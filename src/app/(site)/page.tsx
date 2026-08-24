@@ -44,8 +44,13 @@ export default function Home() {
   return (
     <div>
       {/* HERO */}
-      <section className="mx-auto grid max-w-7xl items-center gap-12 px-8 pt-10 pb-16 md:grid-cols-2 lg:px-16">
-        <div>
+      <section className="relative mx-auto max-w-7xl overflow-hidden px-8 pt-10 pb-16 lg:px-16">
+        <img
+          src="/images/bg image 1.png"
+          alt="eLearning illustration"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div className="relative z-10">
           <span className="badge-pill">
             <Star className="h-3.5 w-3.5 fill-primary text-primary" />
             ELEVATING ELEARNING EXPERIENCES
@@ -63,48 +68,41 @@ export default function Home() {
             storytelling at the core, delivered with speed, and built to perform.
           </p>
         </div>
-        <div className="relative flex justify-center">
-          <img
-            src="/images/bg image 1.png"
-            alt="eLearning illustration"
-            className="max-h-[420px] w-auto object-contain"
-          />
-        </div>
       </section>
 
       {/* TRUSTED BRANDS */}
-      <section className="border-t border-slate-100 bg-white py-10 px-8 lg:px-16">
+      <section className="border-t border-slate-100 bg-white py-14 px-8 lg:px-16">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-6 text-center text-xs font-semibold uppercase tracking-[2px] text-muted">
+          <p className="mb-10 text-center text-sm font-semibold uppercase tracking-[2px] text-muted">
             Trusted by leading brands:
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-5 md:gap-x-12">
+          <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8 md:gap-x-16">
             <img
               src="/images/tata power solar_logo.png"
               alt="Tata Power Solar"
-              className="h-10 object-contain"
+              className="h-20 object-contain"
             />
             <img
               src="/images/Tata Power_logo.png"
               alt="Tata Power"
-              className="h-8 object-contain"
+              className="h-20 object-contain"
             />
             <img
               src="/images/Reliance_logo.png"
               alt="Reliance"
-              className="h-9 object-contain"
+              className="h-48 object-contain"
             />
             <img
               src="/images/jiva.pg.png"
               alt="Jiva Ayurveda"
-              className="h-9 object-contain"
+              className="h-20 object-contain"
             />
             <img
               src="/images/virtuoskill.png.png"
               alt="Virtuoskill"
-              className="h-8 object-contain"
+              className="h-20 object-contain"
             />
-            <span className="italic text-muted">| and more...</span>
+            <span className="pl-2 text-lg italic text-muted">| and more...</span>
           </div>
         </div>
       </section>
