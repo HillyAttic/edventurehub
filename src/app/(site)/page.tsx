@@ -200,10 +200,10 @@ export default function Home() {
               <span className="font-semibold">Founder &amp; Instructional Designer</span>
             </p>
             <Link
-              href="/philosophy"
+              href="/about"
               className="mt-6 inline-flex items-center gap-2 rounded-full border border-slate-300 px-6 py-2.5 text-sm font-semibold text-ink transition hover:border-primary hover:text-primary"
             >
-              Our Philosophy →
+              Meet the team →
             </Link>
           </div>
         </div>
