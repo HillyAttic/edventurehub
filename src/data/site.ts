@@ -3,7 +3,6 @@ export const navLinks = [
   { label: "About", path: "/about" },
   { label: "Services", path: "/services" },
   { label: "Work", path: "/work" },
-  { label: "Philosophy", path: "/philosophy" },
   { label: "Contact", path: "/contact" },
 ];
 
