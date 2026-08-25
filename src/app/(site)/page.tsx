@@ -76,7 +76,7 @@ export default function Home() {
           <p className="mb-10 text-center text-sm font-semibold uppercase tracking-[2px] text-muted">
             Trusted by leading brands:
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8 md:gap-x-16">
+          <div className="flex items-center justify-center gap-x-12 gap-y-8 md:gap-x-16">
             <img
               src="/images/tata power solar_logo.png"
               alt="Tata Power Solar"
@@ -102,7 +102,7 @@ export default function Home() {
               alt="Virtuoskill"
               className="h-20 object-contain"
             />
-            <span className="pl-2 text-lg italic text-muted">| and more...</span>
+            <span className="pl-2 text-lg italic whitespace-nowrap text-muted">| and more...</span>
           </div>
         </div>
       </section>

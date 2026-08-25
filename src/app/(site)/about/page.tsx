@@ -8,99 +8,13 @@ import {
 /* ── Hero Brain Illustration ─── */
 function BrainHeroIllustration() {
   return (
-    <div className="relative mx-auto h-[380px] w-full max-w-lg">
-      {/* Glow */}
-      <div className="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-indigo-200/60 to-purple-200/60 blur-3xl" />
-
-      {/* Pedestal */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2">
-        <div className="h-6 w-44 rounded-[50%] bg-white shadow-md" />
-        <div className="mx-auto -mt-2 h-4 w-36 rounded-[50%] bg-white/80 shadow" />
-        <div className="mx-auto -mt-1 h-3 w-28 rounded-[50%] bg-white/60" />
-      </div>
-
-      {/* Brain SVG */}
-      <svg
-        viewBox="0 0 260 220"
-        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[58%]"
-        fill="none"
-      >
-        {/* Left half – tech blue */}
-        <path
-          d="M130 30C100 20 55 35 48 75C40 115 65 160 100 178C115 186 125 188 130 188L130 30Z"
-          fill="#60A5FA"
-          opacity="0.85"
-        />
-        <path
-          d="M130 30C100 20 55 35 48 75C40 115 65 160 100 178C115 186 125 188 130 188"
-          stroke="#3B82F6"
-          strokeWidth="1.5"
-        />
-        {/* Left folds */}
-        <path d="M70 70C85 55 105 55 120 70" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" opacity="0.5" />
-        <path d="M58 100C75 85 100 85 118 100" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" opacity="0.5" />
-        <path d="M65 130C82 115 105 115 120 130" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" opacity="0.5" />
-        <path d="M80 155C95 142 112 142 125 155" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" opacity="0.4" />
-        {/* Network nodes left */}
-        <circle cx="85" cy="80" r="4" fill="#93C5FD" />
-        <circle cx="75" cy="110" r="3.5" fill="#93C5FD" />
-        <circle cx="95" cy="125" r="4" fill="#93C5FD" />
-        <circle cx="70" cy="140" r="3" fill="#93C5FD" />
-        {/* Network lines */}
-        <line x1="85" y1="80" x2="75" y2="110" stroke="#60A5FA" strokeWidth="1" opacity="0.7" />
-        <line x1="75" y1="110" x2="95" y2="125" stroke="#60A5FA" strokeWidth="1" opacity="0.7" />
-        <line x1="95" y1="125" x2="70" y2="140" stroke="#60A5FA" strokeWidth="1" opacity="0.7" />
-        <line x1="85" y1="80" x2="95" y2="125" stroke="#60A5FA" strokeWidth="1" opacity="0.5" />
-        {/* Glowing nodes */}
-        <circle cx="85" cy="80" r="7" fill="#60A5FA" opacity="0.2" />
-        <circle cx="95" cy="125" r="7" fill="#60A5FA" opacity="0.2" />
-
-        {/* Right half – creative purple */}
-        <path
-          d="M130 30C160 20 205 35 212 75C220 115 195 160 160 178C145 186 135 188 130 188L130 30Z"
-          fill="#A78BFA"
-          opacity="0.85"
-        />
-        <path
-          d="M130 30C160 20 205 35 212 75C220 115 195 160 160 178C145 186 135 188 130 188"
-          stroke="#7C3AED"
-          strokeWidth="1.5"
-        />
-        {/* Right folds */}
-        <path d="M190 70C175 55 155 55 140 70" stroke="#7C3AED" strokeWidth="2" strokeLinecap="round" opacity="0.5" />
-        <path d="M202 100C185 85 160 85 142 100" stroke="#7C3AED" strokeWidth="2" strokeLinecap="round" opacity="0.5" />
-        <path d="M195 130C178 115 155 115 140 130" stroke="#7C3AED" strokeWidth="2" strokeLinecap="round" opacity="0.5" />
-        <path d="M180 155C165 142 148 142 135 155" stroke="#7C3AED" strokeWidth="2" strokeLinecap="round" opacity="0.4" />
-
-        {/* Center divide */}
-        <line x1="130" y1="28" x2="130" y2="190" stroke="#4F46E5" strokeWidth="2" opacity="0.4" />
-      </svg>
-
-      {/* Orbital badges */}
-      {/* Top-right: Lightbulb */}
-      <div className="absolute right-4 top-4 flex h-12 w-12 items-center justify-center rounded-xl bg-white shadow-lg animate-float">
-        <Lightbulb className="h-6 w-6 text-amber-500" />
-      </div>
-      {/* Right: Play */}
-      <div className="absolute right-0 top-1/3 flex h-11 w-11 items-center justify-center rounded-xl bg-white shadow-lg animate-float-slow">
-        <PlayCircle className="h-5 w-5 text-purple-600" />
-      </div>
-      {/* Bottom-right: Text */}
-      <div className="absolute right-6 bottom-20 flex h-11 w-11 items-center justify-center rounded-xl bg-white shadow-lg animate-float">
-        <Type className="h-5 w-5 text-blue-500" />
-      </div>
-      {/* Left-top: Pen */}
-      <div className="absolute left-4 top-6 flex h-11 w-11 items-center justify-center rounded-xl bg-white shadow-lg animate-float-slow">
-        <PenTool className="h-5 w-5 text-indigo-500" />
-      </div>
-      {/* Left: Pie chart */}
-      <div className="absolute left-0 top-1/2 flex h-11 w-11 items-center justify-center rounded-xl bg-white shadow-lg animate-float">
-        <PieChart className="h-5 w-5 text-cyan-500" />
-      </div>
-      {/* Bottom-left: Video */}
-      <div className="absolute left-6 bottom-20 flex h-11 w-11 items-center justify-center rounded-xl bg-white shadow-lg animate-float-slow">
-        <Play className="h-5 w-5 text-sky-500" />
-      </div>
+    <div className="relative mx-auto w-full max-w-lg">
+      {/* Brain Image */}
+      <img
+        src="/images/aboutus2.png"
+        alt="Edventure eLearning illustration"
+        className="h-auto w-full"
+      />
     </div>
   );
 }
