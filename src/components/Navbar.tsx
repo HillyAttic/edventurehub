@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 import { navLinks } from "../data/site";
 
 export default function Navbar() {
@@ -34,14 +35,14 @@ export default function Navbar() {
       }`}
     >
       <div className="mx-auto flex max-w-[1200px] items-center justify-between px-5 py-3">
-        <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <span className="relative flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-primary to-purple text-xl font-bold text-white shadow-md shadow-indigo-200">
-            e
-          </span>
-          <span className="leading-tight">
-            <span className="block font-heading text-lg font-bold text-ink">edVenture</span>
-            <span className="block text-[11px] font-medium text-muted">Innovative eLearning Solutions</span>
-          </span>
+        <Link href="/" onClick={() => setOpen(false)}>
+          <Image
+            src="/images/branding_edVenture-5.png"
+            alt="edVenture"
+            width={220}
+            height={60}
+            className="h-14 w-auto object-contain"
+          />
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">

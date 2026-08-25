@@ -1,20 +1,20 @@
 import Link from "next/link";
 import {
   Monitor,
-  Package,
+  LayoutGrid,
   Gamepad2,
-  ClipboardList,
-  Smartphone,
+  Presentation,
+  BookOpen,
   Video,
   Star,
 } from "lucide-react";
 
 const serviceIcons: Record<string, React.ComponentType<{ className?: string }>> = {
   "LMS Setup & Deployment": Monitor,
-  "SCORM Modules": Package,
+  "SCORM Modules": LayoutGrid,
   "Gamified Learning": Gamepad2,
-  "ILT / VILT Decks": ClipboardList,
-  "Microlearning Nuggets": Smartphone,
+  "ILT / VILT Decks": Presentation,
+  "Microlearning Nuggets": BookOpen,
   "Video-Based Training": Video,
 };
 
@@ -51,16 +51,16 @@ export default function Home() {
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="relative z-10">
-          <span className="badge-pill">
-            <Star className="h-3.5 w-3.5 fill-primary text-primary" />
-            ELEVATING ELEARNING EXPERIENCES
-          </span>
-          <h1 className="mt-6 font-heading text-5xl font-extrabold leading-[1.1] text-ink whitespace-nowrap sm:text-6xl">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-50/80 border border-purple-200/60 text-[#6D28D9] text-sm font-semibold tracking-wide uppercase mb-6">
+            <Star className="w-4 h-4 fill-current text-[#7C3AED]" />
+            Elevating eLearning Experiences
+          </div>
+          <h1 className="text-5xl font-extrabold text-gray-900 leading-tight">
             Learning That{" "}
-            <span className="text-primary">Sticks.</span>
+            <span className="bg-gradient-to-r from-[#7C3AED] to-[#00A3FF] bg-clip-text text-transparent">Sticks.</span>
             <br />
             Stories That{" "}
-            <span className="text-purple">Move.</span>
+            <span className="bg-gradient-to-r from-[#7C3AED] to-[#00A3FF] bg-clip-text text-transparent">Move.</span>
           </h1>
           <div className="my-5 h-1 w-16 rounded bg-gradient-to-r from-indigo-600 to-purple-600" />
           <p className="max-w-md text-base leading-relaxed text-muted md:text-lg">
@@ -140,52 +140,69 @@ export default function Home() {
       {/* SERVICES SNAPSHOT */}
       <section className="bg-white py-20 px-8">
         <div className="mx-auto max-w-7xl">
-          <h2 className="text-center font-heading text-[28px] font-bold text-ink sm:text-[32px] md:text-[36px]">
+          <h2 className="text-center font-heading text-[32px] font-semibold text-ink sm:text-[36px] md:text-[40px]">
             Services Snapshot
           </h2>
-          <div className="section-underline mx-auto mt-3" />
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-            {[
-              { icon: Monitor, label: "LMS Setup & Deployment" },
-              { icon: Package, label: "SCORM Modules" },
-              { icon: Gamepad2, label: "Gamified Learning" },
-              { icon: ClipboardList, label: "ILT / VILT Decks" },
-              { icon: Smartphone, label: "Microlearning Nuggets" },
-              { icon: Video, label: "Video-Based Training" },
-            ].map((s) => {
-              const Icon = s.icon;
-              return (
-                <div
-                  key={s.label}
-                  className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-5 py-3 shadow-sm"
-                >
-                  <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-indigo-50 text-primary">
-                    <Icon className="h-5 w-5" />
+          <div className="mx-auto mt-3 h-1 w-16 bg-primary" />
+          <div className="mt-10 rounded-2xl border border-slate-200 bg-white px-6 py-8">
+            <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-6">
+              {[
+                { icon: Monitor, label: "LMS Setup & Deployment", color: "text-blue-600" },
+                { icon: LayoutGrid, label: "SCORM Modules", color: "text-purple-600" },
+                { icon: Gamepad2, label: "Gamified Learning", color: "text-blue-600" },
+                { icon: Presentation, label: "ILT / VILT Decks", color: "text-purple-600" },
+                { icon: BookOpen, label: "Microlearning Nuggets", color: "text-blue-600" },
+                { icon: Video, label: "Video-Based Training", color: "text-purple-600" },
+              ].map((s, i) => {
+                const Icon = s.icon;
+                return (
+                  <div
+                    key={s.label}
+                    className={`flex items-center gap-3 ${
+                      i < 5 ? "lg:border-r lg:border-slate-200 lg:pr-6" : ""
+                    }`}
+                  >
+                    <Icon className={`h-8 w-8 ${s.color}`} />
+                    <span className="text-base font-semibold text-gray-700">
+                      {s.label}
+                    </span>
                   </div>
-                  <span className="text-sm font-semibold text-gray-700">{s.label}</span>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
 
       {/* TESTIMONIAL */}
       <section className="mx-auto max-w-7xl px-8 py-20 lg:px-16">
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-blue-50 to-purple-50 p-8 md:p-12">
+        <div className="relative overflow-visible rounded-3xl border border-slate-200/60 bg-[#f0eef8] p-10 pt-12 md:p-14 md:pt-16">
           <div className="grid items-center gap-10 md:grid-cols-[1fr_auto]">
-            <div className="grid grid-cols-[auto_1fr] items-start gap-5">
-              <img
-                src="/images/quote.png"
-                alt=""
-                className="h-12 w-12 object-contain opacity-60"
-              />
+            <div className="flex items-start gap-4 md:gap-6">
+              {/* Decorative quote marks */}
+              <svg
+                className="-mt-4 h-16 w-16 shrink-0 md:-mt-6 md:h-20 md:w-20"
+                viewBox="0 0 64 64"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <defs>
+                  <linearGradient id="quoteGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#a78bfa" />
+                    <stop offset="100%" stopColor="#818cf8" />
+                  </linearGradient>
+                </defs>
+                <path
+                  d="M14 36c0 6.627-5.373 12-12 12V36c0-6.627 5.373-12 12-12v12zm24 0c0 6.627-5.373 12-12 12V36c0-6.627 5.373-12 12-12v12z"
+                  fill="url(#quoteGrad)"
+                />
+              </svg>
               <div>
-                <p className="text-base italic leading-relaxed text-gray-700 md:text-lg">
-                  "edVenture brought our compliance training to life with interactive storytelling —
-                  our completion rates jumped significantly."
+                <p className="text-lg leading-relaxed text-gray-700 md:text-xl">
+                  edVenture brought our compliance training to life with interactive storytelling —
+                  our completion rates jumped significantly.&rdquo;
                 </p>
-                <p className="mt-4 text-sm text-muted">
+                <p className="mt-5 text-sm text-muted">
                   — <span className="font-bold text-ink">Client</span>, Tata Power Solar (testimonial placeholder)
                 </p>
               </div>
@@ -194,14 +211,14 @@ export default function Home() {
               <img
                 src="/images/client, testimonial placeholder.png"
                 alt="Client testimonial"
-                className="h-44 w-44 object-contain"
+                className="h-72 w-72 object-contain md:h-80 md:w-80"
               />
             </div>
           </div>
-          <div className="mt-8 flex justify-center gap-2">
-            <span className="h-3 w-3 rounded-full bg-primary" />
-            <span className="h-3 w-3 rounded-full border border-primary" />
-            <span className="h-3 w-3 rounded-full border border-primary" />
+          <div className="mt-8 flex justify-center gap-2.5">
+            <span className="h-2.5 w-2.5 rounded-full bg-primary" />
+            <span className="h-2.5 w-2.5 rounded-full border border-primary" />
+            <span className="h-2.5 w-2.5 rounded-full border border-primary" />
           </div>
         </div>
       </section>

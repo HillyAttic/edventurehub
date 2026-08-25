@@ -1,16 +1,21 @@
 import Link from "next/link";
+import Image from "next/image";
+import { Mail, Phone, MapPin, ExternalLink } from "lucide-react";
 import { navLinks, contactInfo } from "../data/site";
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-100 pb-28 pt-14">
+    <footer className="bg-slate-50 pb-28 pt-14">
       <div className="mx-auto grid max-w-[1200px] gap-10 px-5 md:grid-cols-[1.4fr_1fr_1.4fr]">
         <div>
-          <Link href="/" className="flex items-center gap-3">
-            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-primary to-purple text-lg font-bold text-white">
-              e
-            </span>
-            <span className="font-heading text-lg font-bold text-ink">edVenture</span>
+          <Link href="/">
+            <Image
+              src="/images/branding_edVenture-5.png"
+              alt="edVenture"
+              width={200}
+              height={54}
+              className="h-[52px] w-auto object-contain"
+            />
           </Link>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted">
             edVenture eLearning Hub is a story-first eLearning design studio founded in 2022 by
@@ -21,21 +26,24 @@ export default function Footer() {
             href={contactInfo.linkedin}
             target="_blank"
             rel="noreferrer"
-            className="mt-5 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white text-primary shadow-sm transition hover:bg-primary hover:text-white"
+            className="mt-5 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#0a66c2] shadow-sm ring-1 ring-slate-200 transition hover:bg-[#0a66c2] hover:text-white"
             aria-label="LinkedIn"
           >
-            in
+            <ExternalLink className="h-[18px] w-[18px]" />
           </a>
         </div>
 
         <div>
-          <h4 className="mb-4 font-heading text-sm font-bold uppercase tracking-wider text-ink">
+          <h4 className="mb-4 font-heading text-xs font-bold uppercase tracking-widest text-ink/70">
             Quick Links
           </h4>
           <ul className="space-y-2.5 text-sm text-muted">
             {navLinks.map((link) => (
               <li key={link.path}>
-                <Link href={link.path} className="transition hover:text-primary">
+                <Link
+                  href={link.path}
+                  className="transition hover:text-primary"
+                >
                   {link.label}
                 </Link>
               </li>
@@ -44,30 +52,33 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4 className="mb-4 font-heading text-sm font-bold uppercase tracking-wider text-ink">
+          <h4 className="mb-4 font-heading text-xs font-bold uppercase tracking-widest text-ink/70">
             Contact
           </h4>
-          <ul className="space-y-2.5 text-sm text-muted">
-            <li>
-              📧{" "}
-              <a href={`mailto:${contactInfo.email}`} className="hover:text-primary">
+          <ul className="space-y-3 text-sm text-muted">
+            <li className="flex items-center gap-2.5">
+              <Mail className="h-4 w-4 shrink-0 text-primary" />
+              <a href={`mailto:${contactInfo.email}`} className="hover:text-primary transition">
                 {contactInfo.email}
               </a>
             </li>
-            <li>
-              📞{" "}
-              <a href={`tel:${contactInfo.phone}`} className="hover:text-primary">
+            <li className="flex items-center gap-2.5">
+              <Phone className="h-4 w-4 shrink-0 text-primary" />
+              <a href={`tel:${contactInfo.phone}`} className="hover:text-primary transition">
                 {contactInfo.phone}
               </a>
             </li>
-            <li>📍 {contactInfo.location}</li>
-            <li>
-              🔗{" "}
+            <li className="flex items-center gap-2.5">
+              <MapPin className="h-4 w-4 shrink-0 text-primary" />
+              <span>{contactInfo.location}</span>
+            </li>
+            <li className="flex items-center gap-2.5">
+              <ExternalLink className="h-4 w-4 shrink-0 text-primary" />
               <a
                 href={contactInfo.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="hover:text-primary"
+                className="hover:text-primary transition"
               >
                 LinkedIn
               </a>
