@@ -22,75 +22,12 @@ function BrainHeroIllustration() {
 /* ── Mountain Story Illustration ─── */
 function MountainIllustration() {
   return (
-    <div className="relative mx-auto h-[320px] w-full max-w-md">
-      <svg viewBox="0 0 400 320" className="h-full w-full" fill="none">
-        {/* Sky background */}
-        <rect width="400" height="320" rx="16" fill="#F0EFFF" />
-
-        {/* Clouds */}
-        <ellipse cx="60" cy="60" rx="40" ry="16" fill="white" opacity="0.7" />
-        <ellipse cx="90" cy="55" rx="30" ry="12" fill="white" opacity="0.6" />
-        <ellipse cx="310" cy="80" rx="35" ry="14" fill="white" opacity="0.5" />
-        <ellipse cx="340" cy="75" rx="25" ry="10" fill="white" opacity="0.4" />
-
-        {/* Sun */}
-        <circle cx="200" cy="70" r="28" fill="#E0D4FC" opacity="0.6" />
-        <circle cx="200" cy="70" r="20" fill="#EDE4FD" opacity="0.7" />
-
-        {/* Back mountains */}
-        <path d="M0 220L80 120L160 200L240 90L320 170L400 100L400 320H0Z" fill="#C4B5FD" opacity="0.4" />
-        <path d="M50 250L150 130L250 220L350 110L400 160L400 320H0Z" fill="#A78BFA" opacity="0.4" />
-
-        {/* Main mountain */}
-        <path d="M120 280L200 60L280 280Z" fill="#6D28D9" opacity="0.8" />
-        <path d="M120 280L200 60L200 280Z" fill="#5B21B6" opacity="0.9" />
-
-        {/* Snow cap */}
-        <path d="M185 90L200 60L215 90L205 95L195 88Z" fill="white" opacity="0.8" />
-
-        {/* Flag */}
-        <line x1="200" y1="60" x2="200" y2="35" stroke="#6D28D9" strokeWidth="2" />
-        <polygon points="200,35 220,42 200,49" fill="#7C3AED" />
-
-        {/* Winding path */}
-        <path
-          d="M160 280C170 250 185 240 180 210C175 180 195 170 190 140C185 110 200 100 198 80"
-          stroke="#818CF8"
-          strokeWidth="8"
-          strokeLinecap="round"
-          fill="none"
-          opacity="0.7"
-        />
-        <path
-          d="M160 280C170 250 185 240 180 210C175 180 195 170 190 140C185 110 200 100 198 80"
-          stroke="#C7D2FE"
-          strokeWidth="4"
-          strokeLinecap="round"
-          fill="none"
-          opacity="0.6"
-        />
-
-        {/* Foliage left */}
-        <g transform="translate(80, 230)">
-          <ellipse cx="0" cy="0" rx="20" ry="30" fill="#8B5CF6" opacity="0.6" />
-          <ellipse cx="-12" cy="10" rx="15" ry="22" fill="#A78BFA" opacity="0.5" />
-        </g>
-        <g transform="translate(60, 250)">
-          <ellipse cx="0" cy="0" rx="16" ry="24" fill="#7C3AED" opacity="0.5" />
-        </g>
-
-        {/* Foliage right */}
-        <g transform="translate(310, 240)">
-          <ellipse cx="0" cy="0" rx="22" ry="28" fill="#8B5CF6" opacity="0.5" />
-          <ellipse cx="14" cy="8" rx="16" ry="20" fill="#A78BFA" opacity="0.4" />
-        </g>
-        <g transform="translate(330, 260)">
-          <ellipse cx="0" cy="0" rx="14" ry="20" fill="#7C3AED" opacity="0.4" />
-        </g>
-
-        {/* Ground */}
-        <path d="M0 280C80 270 150 285 200 278C250 272 320 282 400 275L400 320H0Z" fill="#DDD6FE" opacity="0.5" />
-      </svg>
+    <div className="relative mx-auto w-full max-w-md">
+      <img
+        src="/images/aboutusmountain.png"
+        alt="Edventure eLearning illustration"
+        className="h-auto w-full rounded-2xl"
+      />
     </div>
   );
 }
