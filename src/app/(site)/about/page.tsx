@@ -35,66 +35,12 @@ function MountainIllustration() {
 /* ── Philosophy Illustration ─── */
 function PhilosophyArt() {
   return (
-    <div className="relative mx-auto h-[280px] w-full max-w-sm">
-      <svg viewBox="0 0 260 260" className="h-full w-full" fill="none">
-        {/* Glow circle */}
-        <circle cx="130" cy="130" r="90" fill="#EDE9FE" opacity="0.5" />
-
-        {/* Left hand */}
-        <path d="M70 180C60 160 65 130 80 120C90 113 105 115 115 125L115 180Z" fill="#C4B5FD" opacity="0.7" />
-        <path d="M80 170C75 155 78 135 88 128" stroke="#A78BFA" strokeWidth="2" strokeLinecap="round" />
-
-        {/* Right hand */}
-        <path d="M190 180C200 160 195 130 180 120C170 113 155 115 145 125L145 180Z" fill="#C4B5FD" opacity="0.7" />
-        <path d="M180 170C185 155 182 135 172 128" stroke="#A78BFA" strokeWidth="2" strokeLinecap="round" />
-
-        {/* Lightbulb */}
-        <ellipse cx="130" cy="95" rx="22" ry="28" fill="#FDE68A" opacity="0.9" />
-        <ellipse cx="130" cy="95" rx="16" ry="22" fill="#FCD34D" />
-        {/* Bulb base */}
-        <rect x="122" y="120" width="16" height="8" rx="2" fill="#D4A373" />
-        {/* Filament / heart */}
-        <path
-          d="M126 90C126 85 130 82 130 87C130 82 134 85 134 90C134 94 130 98 130 98C130 98 126 94 126 90Z"
-          fill="#F97316"
-          opacity="0.7"
-        />
-        {/* Glow */}
-        <circle cx="130" cy="90" r="35" fill="#FDE68A" opacity="0.12" />
-
-        {/* Surrounding icons */}
-        {/* Top: Person with heart */}
-        <circle cx="130" cy="38" r="16" fill="white" opacity="0.8" />
-        <circle cx="130" cy="34" r="5" fill="#7C3AED" />
-        <path d="M124 40C124 36 136 36 136 40L136 46H124Z" fill="#7C3AED" />
-        <path d="M128 34C128 32 130 31 130 33C130 31 132 32 132 34C132 36 130 38 130 38C130 38 128 36 128 34Z" fill="#EF4444" opacity="0.8" />
-
-        {/* Top-right: Target */}
-        <circle cx="200" cy="60" r="16" fill="white" opacity="0.8" />
-        <circle cx="200" cy="60" r="10" stroke="#7C3AED" strokeWidth="2" />
-        <circle cx="200" cy="60" r="5" stroke="#7C3AED" strokeWidth="2" />
-        <circle cx="200" cy="60" r="2" fill="#7C3AED" />
-
-        {/* Top-left: Lightbulb small */}
-        <circle cx="60" cy="60" r="16" fill="white" opacity="0.8" />
-        <path d="M56 58C56 54 60 52 60 56C60 52 64 54 64 58C64 62 60 64 60 66C60 64 56 62 56 58Z" fill="#F59E0B" />
-
-        {/* Bottom-left: Shield */}
-        <circle cx="60" cy="170" r="16" fill="white" opacity="0.8" />
-        <path d="M55 168L60 165L65 168L65 173C65 175 62 177 60 178C58 177 55 175 55 173Z" fill="#10B981" />
-
-        {/* Bottom-right: Plant */}
-        <circle cx="200" cy="170" r="16" fill="white" opacity="0.8" />
-        <path d="M200 178V170" stroke="#10B981" strokeWidth="2" strokeLinecap="round" />
-        <path d="M200 174C196 172 194 168 194 168C194 168 198 170 200 172" fill="#10B981" />
-        <path d="M200 172C204 170 206 166 206 166C206 166 202 168 200 170" fill="#34D399" />
-
-        {/* Foliage at bottom */}
-        <path d="M90 200C90 180 110 170 130 175C110 178 95 190 90 200Z" fill="#A78BFA" opacity="0.5" />
-        <path d="M170 200C170 180 150 170 130 175C150 178 165 190 170 200Z" fill="#8B5CF6" opacity="0.5" />
-        <path d="M100 210C105 195 120 185 130 188C120 190 108 200 100 210Z" fill="#7C3AED" opacity="0.3" />
-        <path d="M160 210C155 195 140 185 130 188C140 190 152 200 160 210Z" fill="#6D28D9" opacity="0.3" />
-      </svg>
+    <div className="relative mx-auto w-full max-w-lg">
+      <img
+        src="/images/aboutustestimonials.png"
+        alt="Our Philosophy - Storytelling illustration"
+        className="h-auto w-full"
+      />
     </div>
   );
 }
@@ -153,52 +99,10 @@ function TrophyIllustration() {
 }
 
 /* ── Team Avatars ─── */
-function AvatarCard({
-  hair,
-  face,
-  top,
-  glasses = false,
-  beard = false,
-}: {
-  hair: string;
-  face: string;
-  top: string;
-  glasses?: boolean;
-  beard?: boolean;
-}) {
+function AvatarCard({ src, alt }: { src: string; alt: string }) {
   return (
-    <div className="overflow-hidden rounded-3xl border border-gray-100 bg-[#FFFDF5] p-3 shadow-sm transition hover:shadow-md">
-      <svg viewBox="0 0 160 200" className="w-full" fill="none">
-        {/* Body */}
-        <path d="M40 200V160C40 140 60 125 80 125C100 125 120 140 120 160V200Z" fill={top} />
-        {/* Neck */}
-        <rect x="72" y="100" width="16" height="28" rx="6" fill={face} />
-        {/* Head */}
-        <ellipse cx="80" cy="70" rx="32" ry="38" fill={face} />
-        {/* Hair */}
-        <path d={hair} fill="#1E293B" />
-        {/* Eyes */}
-        <ellipse cx="68" cy="72" rx="3" ry="2.5" fill="#1E293B" />
-        <ellipse cx="92" cy="72" rx="3" ry="2.5" fill="#1E293B" />
-        {/* Glasses */}
-        {glasses && (
-          <>
-            <circle cx="68" cy="72" r="10" fill="none" stroke="#4F46E5" strokeWidth="2" />
-            <circle cx="92" cy="72" r="10" fill="none" stroke="#4F46E5" strokeWidth="2" />
-            <line x1="78" y1="72" x2="82" y2="72" stroke="#4F46E5" strokeWidth="2" />
-          </>
-        )}
-        {/* Smile */}
-        <path d="M72 84Q80 90 88 84" stroke="#1E293B" strokeWidth="1.5" strokeLinecap="round" fill="none" />
-        {/* Beard */}
-        {beard && (
-          <path
-            d="M62 80C62 95 98 95 98 80C92 88 68 88 62 80Z"
-            fill="#1E293B"
-            opacity="0.6"
-          />
-        )}
-      </svg>
+    <div className="overflow-hidden rounded-3xl border border-gray-100 bg-[#FFFDF5] shadow-sm transition hover:shadow-md">
+      <img src={src} alt={alt} className="h-full w-full object-cover" />
     </div>
   );
 }
@@ -281,12 +185,12 @@ export default function About() {
 
       {/* ═══════════ PHILOSOPHY BANNER ═══════════ */}
       <section className="mx-auto my-8 max-w-7xl px-8">
-        <div className="relative overflow-hidden rounded-3xl bg-[#F5F2FF] p-8 md:p-12 lg:flex lg:items-center lg:justify-between lg:gap-8">
+        <div className="relative overflow-hidden rounded-[28px] bg-[#edeafb] p-6 md:px-14 md:py-12 lg:flex lg:items-center lg:justify-between lg:gap-12 lg:pr-10">
           <div className="lg:max-w-xl">
             <h2 className="text-lg font-semibold text-gray-900">Our Philosophy</h2>
-            <div className="mt-1 h-0.5 w-10 rounded bg-gray-900" />
-            <h3 className="mt-2 text-3xl font-extrabold text-gray-900 md:text-4xl">Storytelling is our superpower.</h3>
-            <div className="mt-4 space-y-2 text-base text-gray-700 md:text-lg">
+            <div className="mt-2 h-0.5 w-9 rounded bg-gray-600" />
+            <h3 className="mt-5 text-3xl font-extrabold text-gray-900 md:text-4xl">Storytelling is our superpower.</h3>
+            <div className="mt-5 space-y-4 text-base leading-relaxed text-gray-700 md:text-lg">
               <p>
                 Every module we create starts with a story. Not slides. Not bullet points. A narrative that puts the
                 learner at the center — with context, conflict, and resolution.
@@ -294,7 +198,7 @@ export default function About() {
               <p>Because that's how humans learn.</p>
             </div>
           </div>
-          <div className="mt-8 lg:mt-0 lg:w-72">
+          <div className="mt-8 flex items-center justify-center lg:mt-0 lg:w-96">
             <PhilosophyArt />
           </div>
         </div>
@@ -312,30 +216,10 @@ export default function About() {
           View all →
         </p>
         <div className="mt-6 grid grid-cols-2 gap-6 md:grid-cols-4">
-          <AvatarCard
-            hair="M48 60C48 30 70 20 80 20C90 20 112 30 112 60C112 65 108 70 105 68C100 64 90 60 80 60C70 60 60 64 55 68C52 70 48 65 48 60Z"
-            face="#FDBCB4"
-            top="#1E293B"
-          />
-          <AvatarCard
-            hair="M45 60C45 25 72 15 80 15C88 15 115 25 115 60C118 75 112 85 108 80C104 74 98 70 92 68C96 60 100 50 100 40C100 30 92 25 80 25C68 25 60 30 60 40C60 50 64 60 68 68C62 70 56 74 52 80C48 85 42 75 45 60Z"
-            face="#FDBCB4"
-            top="#DC2626"
-            glasses
-          />
-          <AvatarCard
-            hair="M50 60C50 28 68 18 80 18C92 18 110 28 110 60L110 100C110 102 108 104 106 104C104 104 102 102 102 100L102 65C95 70 88 72 80 72C72 72 65 70 58 65L58 100C58 102 56 104 54 104C52 104 50 102 50 100Z"
-            face="#FDBCB4"
-            top="#8B5CF6"
-            glasses
-          />
-          <AvatarCard
-            hair="M55 60C55 35 68 22 80 22C92 22 105 35 105 60C105 63 102 65 100 63C96 58 88 56 80 56C72 56 64 58 60 63C58 65 55 63 55 60Z"
-            face="#FDBCB4"
-            top="#1E3A5F"
-            glasses
-            beard
-          />
+          <AvatarCard src="/images/team1.png" alt="Team member 1" />
+          <AvatarCard src="/images/team2.png" alt="Team member 2" />
+          <AvatarCard src="/images/team3.png" alt="Team member 3" />
+          <AvatarCard src="/images/team4.png" alt="Team member 4" />
         </div>
       </section>
 
