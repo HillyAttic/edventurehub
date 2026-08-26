@@ -44,29 +44,33 @@ export default function Home() {
   return (
     <div>
       {/* HERO */}
-      <section className="relative mx-auto max-w-7xl overflow-hidden px-4 pt-8 pb-12 sm:px-6 sm:pt-10 sm:pb-16 lg:px-8 lg:pt-12">
-        <img
-          src="/images/bg image 1.png"
-          alt="eLearning illustration"
-          className="absolute inset-0 h-full w-full object-cover"
-        />
-        <div className="relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-50/80 border border-purple-200/60 text-[#6D28D9] text-sm font-semibold tracking-wide uppercase mb-6">
-            <Star className="w-4 h-4 fill-current text-[#7C3AED]" />
-            Elevating eLearning Experiences
+      <section className="relative mx-auto max-w-7xl px-4 pt-8 pb-12 sm:px-6 sm:pt-10 sm:pb-16 lg:px-8 lg:pt-12">
+        <div className="flex flex-col items-center gap-8 lg:flex-row lg:items-center lg:gap-12">
+          <div className="flex-1">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-50/80 border border-purple-200/60 text-[#6D28D9] text-sm font-semibold tracking-wide uppercase mb-6">
+              <Star className="w-4 h-4 fill-current text-[#7C3AED]" />
+              Elevating eLearning Experiences
+            </div>
+            <h1 className="text-3xl font-extrabold text-gray-900 leading-tight sm:text-4xl md:text-5xl lg:text-6xl">
+              Learning That{" "}
+              <span className="bg-gradient-to-r from-[#7C3AED] to-[#00A3FF] bg-clip-text text-transparent">Sticks.</span>
+              <br />
+              Stories That{" "}
+              <span className="bg-gradient-to-r from-[#7C3AED] to-[#00A3FF] bg-clip-text text-transparent">Move.</span>
+            </h1>
+            <div className="my-5 h-1 w-16 rounded bg-gradient-to-r from-indigo-600 to-purple-600" />
+            <p className="max-w-md text-base leading-relaxed text-muted md:text-lg">
+              We design eLearning experiences that your learners actually remember — crafted with
+              storytelling at the core, delivered with speed, and built to perform.
+            </p>
           </div>
-          <h1 className="text-3xl font-extrabold text-gray-900 leading-tight sm:text-4xl md:text-5xl lg:text-6xl">
-            Learning That{" "}
-            <span className="bg-gradient-to-r from-[#7C3AED] to-[#00A3FF] bg-clip-text text-transparent">Sticks.</span>
-            <br />
-            Stories That{" "}
-            <span className="bg-gradient-to-r from-[#7C3AED] to-[#00A3FF] bg-clip-text text-transparent">Move.</span>
-          </h1>
-          <div className="my-5 h-1 w-16 rounded bg-gradient-to-r from-indigo-600 to-purple-600" />
-          <p className="max-w-md text-base leading-relaxed text-muted md:text-lg">
-            We design eLearning experiences that your learners actually remember — crafted with
-            storytelling at the core, delivered with speed, and built to perform.
-          </p>
+          <div className="flex-1">
+            <img
+              src="/images/homepagebg.png"
+              alt="eLearning illustration"
+              className="h-auto w-full max-w-lg object-contain"
+            />
+          </div>
         </div>
       </section>
 
