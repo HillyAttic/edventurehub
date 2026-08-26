@@ -47,10 +47,10 @@ export default function Philosophy() {
   return (
     <div>
       {/* HERO */}
-      <section className="mx-auto grid max-w-[1200px] items-center gap-10 px-5 py-12 md:grid-cols-2 md:py-16">
+      <section className="mx-auto grid max-w-[1200px] items-center gap-8 px-4 py-10 sm:px-6 sm:py-12 md:grid-cols-2 md:px-5 md:py-16">
         <div>
           <Badge>Our Philosophy</Badge>
-          <h1 className="mt-6 font-heading text-[34px] font-bold leading-tight text-ink sm:text-[40px] md:text-[46px]">
+          <h1 className="mt-6 font-heading text-3xl font-bold leading-tight text-ink sm:text-[40px] md:text-[46px]">
             We Build <span className="gradient-text-purple">Learning That Works.</span>
           </h1>
           <div className="section-underline mt-6" />
@@ -65,15 +65,15 @@ export default function Philosophy() {
       </section>
 
       {/* 4 PILLARS */}
-      <section className="bg-white py-20">
-        <div className="mx-auto max-w-[1200px] px-5">
+      <section className="bg-white py-12 sm:py-16 lg:py-20">
+        <div className="mx-auto max-w-[1200px] px-4 sm:px-5">
           <SectionHeading title="The edVenture Edge — 4 Pillars" />
 
-          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid gap-5 sm:mt-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {pillars.map((p) => (
               <div key={p.title}
-                className="card-hover flex flex-col items-center rounded-3xl border border-purple-100/70 bg-gradient-to-b from-[#f5f2ff] to-white p-8 text-center shadow-xl shadow-indigo-100/50">
-                <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-badgebg text-purple-600">
+                className="card-hover flex flex-col items-center rounded-3xl border border-purple-100/70 bg-gradient-to-b from-[#f5f2ff] to-white p-6 text-center shadow-xl shadow-indigo-100/50 sm:p-8">
+                <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-badgebg text-purple-600 sm:mb-6 sm:h-20 sm:w-20">
                   {p.icon}
                 </div>
                 <h3 className="mb-3 font-heading text-lg font-bold">
@@ -92,23 +92,23 @@ export default function Philosophy() {
       </section>
 
       {/* PROCESS */}
-      <section className="mx-auto max-w-[1200px] px-5 py-20">
+      <section className="mx-auto max-w-[1200px] px-4 py-12 sm:px-5 sm:py-16 lg:py-20">
         <SectionHeading title="Our Process" />
 
-        <div className="relative mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="relative mt-10 grid gap-8 sm:mt-12 sm:grid-cols-2 sm:gap-10 lg:grid-cols-5">
           <div className="absolute left-0 right-0 top-10 hidden h-0.5 border-t-2 border-dashed border-slate-200 lg:block" />
           {steps.map((s) => (
             <div key={s.num} className="relative flex flex-col items-center text-center">
               <div className="relative">
-                <div className={`flex h-20 w-20 items-center justify-center rounded-full ${s.circleBg} shadow-[0_14px_34px_-14px_rgba(0,0,0,0.28)]`}>
+                <div className={`flex h-16 w-16 items-center justify-center rounded-full sm:h-20 sm:w-20 ${s.circleBg} shadow-[0_14px_34px_-14px_rgba(0,0,0,0.28)]`}>
                   <span className={s.iconColor}>{s.icon}</span>
                 </div>
                 <span className={`absolute -right-2 -top-2 flex h-7 w-7 items-center justify-center rounded-full ${s.badge} text-[11px] font-bold text-white shadow`}>
                   {s.num}
                 </span>
               </div>
-              <h3 className={`mt-5 font-heading text-base font-bold ${s.titleColor}`}>{s.title}</h3>
-              <p className="mt-2 max-w-[180px] text-xs leading-relaxed text-muted">{s.desc}</p>
+              <h3 className={`mt-4 font-heading text-base font-bold sm:mt-5 ${s.titleColor}`}>{s.title}</h3>
+              <p className="mt-2 max-w-[180px] text-xs leading-relaxed text-muted sm:max-w-[200px] sm:text-sm">{s.desc}</p>
             </div>
           ))}
         </div>

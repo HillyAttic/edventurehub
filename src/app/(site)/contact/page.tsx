@@ -87,12 +87,12 @@ const LinkedInIcon = (p: IconProps) => (
 function HeroSection() {
   return (
     <section className="bg-[#F4F4FB]">
-      <div className="mx-auto grid max-w-[1200px] items-center gap-10 px-5 py-14 md:grid-cols-[1fr_1.15fr] md:py-16">
+      <div className="mx-auto grid max-w-[1200px] items-center gap-8 px-4 py-10 sm:px-6 sm:py-12 md:grid-cols-[1fr_1.15fr] md:px-5 md:py-16">
         <div>
-          <span className="inline-block rounded-full border border-[#E3E0F6] bg-[#EEECFA] px-5 py-2.5 text-[10px] font-bold uppercase tracking-[0.14em] text-[#4B2FE2]">
+          <span className="inline-block rounded-full border border-[#E3E0F6] bg-[#EEECFA] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.14em] text-[#4B2FE2] sm:px-5 sm:py-2.5">
             Let&apos;s Collaborate
           </span>
-          <h1 className="mt-6 font-heading text-[36px] font-bold leading-[1.18] tracking-tight text-[#0E1220] sm:text-[42px] md:text-[46px]">
+          <h1 className="mt-5 font-heading text-3xl font-bold leading-[1.18] tracking-tight text-[#0E1220] sm:mt-6 sm:text-[42px] md:text-[46px]">
             Let&apos;s Build
             <br />
             Something
@@ -132,18 +132,18 @@ function ContactSection() {
   };
 
   return (
-    <section className="bg-white py-20">
-      <div className="mx-auto grid max-w-[1200px] items-start gap-12 px-5 md:grid-cols-[1fr_1.35fr]">
+    <section className="bg-white py-12 sm:py-16 lg:py-20">
+      <div className="mx-auto grid max-w-[1200px] items-start gap-10 px-4 sm:px-5 sm:gap-12 md:grid-cols-[1fr_1.35fr]">
         {/* Left column */}
         <div>
-          <p className="text-[15px] font-extrabold uppercase tracking-[0.06em] text-[#4B2FE2]">
+          <p className="text-sm font-extrabold uppercase tracking-[0.06em] text-[#4B2FE2]">
             Get in Touch
           </p>
           <div className="mt-3 h-[3px] w-10 rounded bg-[#4B2FE2]" />
-          <h2 className="mt-5 font-heading text-[28px] font-bold leading-snug text-[#0E1220] md:text-[31px]">
+          <h2 className="mt-4 font-heading text-2xl font-bold leading-snug text-[#0E1220] sm:mt-5 sm:text-[28px] md:text-[31px]">
             We&apos;re Here to Help You Succeed.
           </h2>
-          <p className="mt-4 max-w-sm text-[15px] leading-relaxed text-[#5B6472]">
+          <p className="mt-3 max-w-sm text-sm leading-relaxed text-[#5B6472] sm:mt-4 sm:text-[15px]">
             Tell us about your project and we&apos;ll get back to you within 24 hours.
           </p>
           <div className="relative mt-4 max-w-[420px]">
@@ -160,7 +160,7 @@ function ContactSection() {
         {/* Form card */}
         <form
           onSubmit={onSubmit}
-          className="rounded-2xl bg-white p-6 shadow-[0_18px_50px_-12px_rgba(35,32,90,0.16)] ring-1 ring-[#EEEFF6] md:p-8"
+          className="rounded-2xl bg-white p-5 shadow-[0_18px_50px_-12px_rgba(35,32,90,0.16)] ring-1 ring-[#EEEFF6] sm:p-6 md:p-8"
         >
           <div className="grid gap-4 sm:grid-cols-2">
             <input required type="text" name="name" placeholder="Full Name *" className={inputCls} />
@@ -274,28 +274,28 @@ function QuickConnectSection() {
   ];
 
   return (
-    <section className="bg-[#F7F8FC] py-20">
-      <div className="mx-auto max-w-[1200px] px-5">
+    <section className="bg-[#F7F8FC] py-12 sm:py-16 lg:py-20">
+      <div className="mx-auto max-w-[1200px] px-4 sm:px-5">
         <div className="text-center">
-          <p className="text-[15px] font-extrabold uppercase tracking-[0.06em] text-[#4B2FE2]">
+          <p className="text-sm font-extrabold uppercase tracking-[0.06em] text-[#4B2FE2]">
             Quick Connect
           </p>
           <div className="mx-auto mt-3 h-[3px] w-16 rounded bg-[#4B2FE2]" />
-          <h2 className="mt-5 font-heading text-[26px] font-bold text-[#0E1220] md:text-[30px]">
+          <h2 className="mt-4 font-heading text-2xl font-bold text-[#0E1220] sm:mt-5 sm:text-[26px] md:text-[30px]">
             Other Ways to Reach Us
           </h2>
         </div>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-8 grid gap-5 sm:mt-10 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
           {cards.map(({ title, iconBg, iconColor, Icon, body }) => (
             <div
               key={title}
-              className="rounded-xl border border-[#EEEFF6] bg-white px-6 py-8 text-center shadow-sm transition hover:-translate-y-1 hover:shadow-md"
+              className="rounded-xl border border-[#EEEFF6] bg-white px-5 py-6 text-center shadow-sm transition hover:-translate-y-1 hover:shadow-md sm:px-6 sm:py-8"
             >
-              <div className={`mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full ${iconBg} ${iconColor}`}>
+              <div className={`mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full sm:mb-4 sm:h-16 sm:w-16 ${iconBg} ${iconColor}`}>
                 <Icon />
               </div>
-              <h3 className="mb-1.5 font-heading text-[15px] font-bold text-[#0E1220]">{title}</h3>
+              <h3 className="mb-1.5 font-heading text-[14px] font-bold text-[#0E1220] sm:text-[15px]">{title}</h3>
               {body}
             </div>
           ))}

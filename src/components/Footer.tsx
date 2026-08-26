@@ -5,8 +5,8 @@ import { navLinks, contactInfo } from "../data/site";
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-50 pb-28 pt-14">
-      <div className="mx-auto grid max-w-[1200px] gap-10 px-5 md:grid-cols-[1.4fr_1fr_1.4fr]">
+    <footer className="bg-slate-50 pb-28 pt-10 sm:pt-14">
+      <div className="mx-auto grid max-w-[1200px] gap-8 px-4 sm:gap-10 sm:px-6 sm:grid-cols-[1.4fr_1fr_1.4fr] lg:px-8">
         <div>
           <Link href="/">
             <Image
@@ -87,7 +87,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="mx-auto mt-10 max-w-[1200px] border-t border-slate-200 px-5 pt-6 text-center text-xs text-muted">
+      <div className="mx-auto mt-10 max-w-[1200px] border-t border-slate-200 px-4 py-6 sm:px-6 text-center text-xs text-muted lg:px-8">
         © 2024 edVenture eLearning Hub. All rights reserved.
       </div>
     </footer>
