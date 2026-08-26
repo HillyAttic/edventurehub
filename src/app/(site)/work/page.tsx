@@ -1,5 +1,4 @@
 import { Badge, SectionHeading } from "@/components/UI";
-import { TeamworkIllustration } from "@/components/HeroIllustration";
 import { caseStudies, industries } from "@/data/site";
 
 const brandLogos: { name: string; img: string }[] = [
@@ -32,19 +31,30 @@ export default function Work() {
     <div>
       {/* HERO */}
       <section className="mx-auto grid max-w-[1200px] items-center gap-10 px-5 py-16 md:grid-cols-2 md:py-24">
+        {/* Left Column - Text Content */}
         <div>
-          <Badge>Our Projects</Badge>
+          <Badge>OUR PROJECTS</Badge>
           <h1 className="mt-5 font-heading text-[34px] font-bold leading-tight text-ink sm:text-[40px] md:text-[44px]">
             Our Projects.{" "}
             <span className="gradient-text">Our Impact.</span>
           </h1>
           <div className="section-underline my-6" />
           <p className="max-w-lg text-base leading-relaxed text-muted">
-            We've partnered with organizations across energy, healthcare, education, and retail to
-            deliver learning that works.
+            We&apos;ve partnered with organizations across energy, healthcare, education,
+            and retail to deliver learning that works.
           </p>
         </div>
-        <TeamworkIllustration />
+
+        {/* Right Column - Illustration */}
+        <div className="relative mx-auto w-full max-w-xl">
+          {/* Soft glow background */}
+          <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-indigo-100/60 via-purple-50/40 to-sky-100/40 blur-xl" />
+          <img
+            src="/images/work1.png"
+            alt="Our Projects - Our Impact"
+            className="relative w-full rounded-3xl"
+          />
+        </div>
       </section>
 
       {/* BRANDS */}
