@@ -80,22 +80,6 @@ const LinkedInIcon = (p: IconProps) => (
   </svg>
 );
 
-const ChatIcon = (p: IconProps) => (
-  <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...p}>
-    <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
-    <circle cx="8.5" cy="12" r="1" fill="currentColor" stroke="none" />
-    <circle cx="12.5" cy="12" r="1" fill="currentColor" stroke="none" />
-    <circle cx="16.5" cy="12" r="1" fill="currentColor" stroke="none" />
-  </svg>
-);
-
-const ArrowRightIcon = (p: IconProps) => (
-  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" {...p}>
-    <path d="M5 12h14" />
-    <path d="m12 5 7 7-7 7" />
-  </svg>
-);
-
 /* ------------------------------------------------------------------ */
 /* 1. Hero                                                             */
 /* ------------------------------------------------------------------ */
@@ -321,45 +305,12 @@ function QuickConnectSection() {
   );
 }
 
-/* ------------------------------------------------------------------ */
-/* 4. Bottom discovery-call CTA bar                                    */
-/* ------------------------------------------------------------------ */
-
-function DiscoveryCtaBar() {
-  return (
-    <section className="bg-gradient-to-r from-[#2A1B8F] via-[#1733D9] to-[#00A6E8] py-6">
-      <div className="mx-auto flex max-w-[1200px] flex-col items-center justify-between gap-5 px-5 md:flex-row">
-        <div className="flex items-center gap-5">
-          <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-white text-[#2A2A4A]">
-            <ChatIcon />
-          </span>
-          <p className="text-[15px] font-medium leading-relaxed text-white">
-            Whether you have a brief ready
-            <br className="hidden md:block" /> or just an idea — we&apos;re the right people to talk to.
-          </p>
-        </div>
-        <a
-          href="/contact"
-          className="flex shrink-0 items-center gap-2 rounded-full bg-white px-6 py-3 text-[15px] font-bold text-[#1733D9] shadow-lg transition hover:bg-blue-50"
-        >
-          Book a free Discovery call <ArrowRightIcon />
-        </a>
-      </div>
-    </section>
-  );
-}
-
-/* ------------------------------------------------------------------ */
-/* Page                                                                */
-/* ------------------------------------------------------------------ */
-
 export default function ContactPage() {
   return (
     <div>
       <HeroSection />
       <ContactSection />
       <QuickConnectSection />
-      <DiscoveryCtaBar />
     </div>
   );
 }
