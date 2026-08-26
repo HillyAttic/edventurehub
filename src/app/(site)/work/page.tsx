@@ -22,9 +22,11 @@ const brandLogos: { name: string; img: string }[] = [
     name: "Virtuoskill",
     img: "/images/virtuoskill.png.png",
   },
+  {
+    name: "Reliance",
+    img: "/images/Reliance_logo.png",
+  },
 ];
-
-const textBrands = ["RELIANCE"];
 
 export default function Work() {
   return (
@@ -58,28 +60,26 @@ export default function Work() {
       </section>
 
       {/* BRANDS */}
-      <section className="bg-white py-12">
-        <div className="mx-auto max-w-[1200px] px-5">
+      <section className="bg-white py-10">
+        <div className="mx-auto">
           <p className="mb-8 text-center font-heading text-xl font-bold text-gray-800">
             Brands that trust <span className="font-bold text-indigo-800">edVenture</span>
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-10 md:gap-14 py-8">
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 py-6">
             {brandLogos.map((b) => (
               <div key={b.name} className="flex items-center justify-center">
                 <img
                   src={b.img}
                   alt={b.name}
-                  className="h-10 w-auto object-contain opacity-80 grayscale transition hover:opacity-100 hover:grayscale-0"
+                  className={`w-auto object-contain transition hover:scale-105 ${
+                    b.name === "Reliance"
+                      ? "h-20 md:h-24"
+                      : b.name === "Jindal Steel"
+                      ? "h-16 md:h-20"
+                      : "h-12 md:h-14"
+                  }`}
                 />
               </div>
-            ))}
-            {textBrands.map((b) => (
-              <span
-                key={b}
-                className="font-heading text-xl font-bold tracking-wide text-slate-500"
-              >
-                {b}
-              </span>
             ))}
           </div>
         </div>
@@ -119,18 +119,17 @@ export default function Work() {
       </section>
 
       {/* INDUSTRIES */}
-      <section className="mt-16">
-        <h2 className="mb-6 text-center font-heading text-3xl font-bold text-gray-900">
+      <section className="py-20">
+        <h2 className="mb-10 text-center font-heading text-3xl font-bold text-gray-900">
           Industries We Serve
         </h2>
-        <div className="bg-[#F3F4F6] px-4 py-6">
-          <div className="flex flex-wrap items-center justify-center gap-2 text-center text-lg font-medium text-gray-800 md:gap-4">
-            {industries.map((ind, i) => (
-              <span key={ind}>
-                <span className="font-semibold text-gray-800">{ind}</span>
-                {i < industries.length - 1 && <span className="mx-2 text-gray-400">|</span>}
-              </span>
-            ))}
+        <div className="bg-[#F3F4F8] px-6 py-5">
+          <div className="flex flex-wrap items-center justify-center gap-x-3 text-lg font-semibold text-gray-800">
+            {industries.flatMap((ind, i) =>
+              i < industries.length - 1
+                ? [<span key={ind}>{ind}</span>, <span key={`sep-${i}`} className="text-gray-400">|</span>]
+                : [<span key={ind}>{ind}</span>]
+            )}
           </div>
         </div>
       </section>

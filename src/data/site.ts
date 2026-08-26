@@ -136,7 +136,7 @@ export const caseStudies = [
       "https://images.pexels.com/photos/4320449/pexels-photo-4320449.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
   },
   {
-    id: "01",
+    id: "02",
     title: "Tata Power Renewable Energy",
     challenge:
       "Deploying consistent, trackable learning content across their internal Gyankosh LMS for a large and dispersed workforce",
@@ -144,7 +144,7 @@ export const caseStudies = [
       "https://images.pexels.com/photos/148361/pexels-photo-148361.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
   },
   {
-    id: "01",
+    id: "03",
     title: "Jiva Ayurveda",
     challenge:
       "Deploying consistent, trackable learning content across their internal Gyankosh LMS for a large and dispersed workforce",
