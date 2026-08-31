@@ -8,6 +8,7 @@ import {
   Video,
   Star,
 } from "lucide-react";
+import Testimonials from "@/components/Testimonials";
 
 const serviceIcons: Record<string, React.ComponentType<{ className?: string }>> = {
   "LMS Setup & Deployment": Monitor,
@@ -179,53 +180,7 @@ export default function Home() {
       </section>
 
       {/* TESTIMONIAL */}
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
-        <div className="relative overflow-visible rounded-3xl border border-slate-200/60 bg-[#f0eef8] p-6 pt-8 sm:p-8 sm:pt-10 md:p-12 md:pt-14 lg:p-14 lg:pt-16">
-          <div className="grid items-center gap-6 md:grid-cols-[1fr_auto] md:gap-10">
-            <div className="flex items-start gap-3 sm:gap-4 md:gap-6">
-              {/* Decorative quote marks */}
-              <svg
-                className="-mt-2 h-10 w-10 shrink-0 sm:-mt-4 sm:h-14 sm:w-14 md:-mt-6 md:h-20 md:w-20"
-                viewBox="0 0 64 64"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <defs>
-                  <linearGradient id="quoteGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#a78bfa" />
-                    <stop offset="100%" stopColor="#818cf8" />
-                  </linearGradient>
-                </defs>
-                <path
-                  d="M14 36c0 6.627-5.373 12-12 12V36c0-6.627 5.373-12 12-12v12zm24 0c0 6.627-5.373 12-12 12V36c0-6.627 5.373-12 12-12v12z"
-                  fill="url(#quoteGrad)"
-                />
-              </svg>
-              <div>
-                <p className="text-base leading-relaxed text-gray-700 sm:text-lg md:text-xl">
-                  edVenture brought our compliance training to life with interactive storytelling —
-                  our completion rates jumped significantly.&rdquo;
-                </p>
-                <p className="mt-4 text-xs text-muted sm:mt-5 sm:text-sm">
-                  — <span className="font-bold text-ink">Client</span>, Tata Power Solar (testimonial placeholder)
-                </p>
-              </div>
-            </div>
-            <div className="hidden justify-self-end sm:block">
-              <img
-                src="/images/client, testimonial placeholder.png"
-                alt="Client testimonial"
-                className="mx-auto h-48 w-48 object-contain sm:h-56 sm:w-56 md:h-64 md:w-64 lg:h-72 lg:w-72 xl:h-80 xl:w-80"
-              />
-            </div>
-          </div>
-          <div className="mt-8 flex justify-center gap-2.5">
-            <span className="h-2.5 w-2.5 rounded-full bg-primary" />
-            <span className="h-2.5 w-2.5 rounded-full border border-primary" />
-            <span className="h-2.5 w-2.5 rounded-full border border-primary" />
-          </div>
-        </div>
-      </section>
+      <Testimonials />
 
       {/* FOUNDER */}
       <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 sm:pb-20 lg:px-8 lg:pb-24">
