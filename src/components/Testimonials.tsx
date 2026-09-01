@@ -25,7 +25,7 @@ export default function Testimonials() {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
-    const id = setInterval(() => setCurrent((i) => (i + 1) % testimonials.length), 2000);
+    const id = setInterval(() => setCurrent((i) => (i + 1) % testimonials.length), 5000);
     return () => clearInterval(id);
   }, []);
 
