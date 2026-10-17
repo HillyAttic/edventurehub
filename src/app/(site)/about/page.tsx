@@ -3,6 +3,7 @@ import {
   ShieldCheck, Heart, Leaf, Play, Award, Clock, Calendar,
   Box, BarChart3, Layers,
 } from "lucide-react";
+import TeamModal from "@/components/TeamModal";
 
 /* ── Hero Brain Illustration ─── */
 function BrainHeroIllustration() {
@@ -58,10 +59,11 @@ function WhyChooseIllustration() {
 }
 
 /* ── Team Avatars ─── */
-function AvatarCard({ src, alt }: { src: string; alt: string }) {
+function AvatarCard({ src, alt, role }: { src: string; alt: string; role: string }) {
   return (
-    <div className="overflow-hidden rounded-3xl border border-gray-100 bg-[#FFFDF5] shadow-sm transition hover:shadow-md">
-      <img src={src} alt={alt} className="h-full w-full object-cover" />
+    <div className="flex flex-col overflow-hidden rounded-3xl border border-gray-100 bg-[#FFFDF5] shadow-sm transition hover:shadow-md">
+      <img src={src} alt={alt} className="aspect-square w-full object-cover" />
+      <p className="mt-auto px-2 py-3 text-center text-xs font-medium text-gray-700 sm:text-sm">{role}</p>
     </div>
   );
 }
@@ -169,14 +171,14 @@ export default function About() {
           </h2>
           <p className="mt-2 text-sm text-gray-600 sm:text-base">Meet the minds behind the magic:</p>
         </div>
-        <p className="mt-4 text-right text-sm font-semibold text-gray-600 hover:text-purple-600">
-          View all →
-        </p>
+        <div className="mt-4 text-right">
+          <TeamModal />
+        </div>
         <div className="mt-6 grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-4">
-          <AvatarCard src="/images/team1.png" alt="Team member 1" />
-          <AvatarCard src="/images/team2.png" alt="Team member 2" />
-          <AvatarCard src="/images/team3.png" alt="Team member 3" />
-          <AvatarCard src="/images/team4.png" alt="Team member 4" />
+          <AvatarCard src="/images/team1.png" alt="Team member 1" role="Instructional Designer" />
+          <AvatarCard src="/images/team2.png" alt="Team member 2" role="Storyline Developer" />
+          <AvatarCard src="/images/team3.png" alt="Team member 3" role="Graphic Designer" />
+          <AvatarCard src="/images/team4.png" alt="Team member 4" role="Motion Graphic Artist" />
         </div>
       </section>
 

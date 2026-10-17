@@ -1,5 +1,6 @@
 import { Badge, SectionHeading } from "@/components/UI";
-import { caseStudies, industries } from "@/data/site";
+import CaseStudies from "@/components/CaseStudies";
+import { industries } from "@/data/site";
 
 const brandLogos: { name: string; img: string }[] = [
   {
@@ -11,8 +12,8 @@ const brandLogos: { name: string; img: string }[] = [
     img: "/images/Tata Power_logo.png",
   },
   {
-    name: "Jindal Steel",
-    img: "/images/jindal steel.png.png",
+    name: "HDFC Bank",
+    img: "/images/hdfc-bank-logo.svg",
   },
   {
     name: "Jiva Ayurveda",
@@ -74,8 +75,8 @@ export default function Work() {
                   className={`w-auto object-contain transition hover:scale-105 ${
                     b.name === "Reliance"
                       ? "h-14 sm:h-20 md:h-24"
-                      : b.name === "Jindal Steel"
-                      ? "h-12 sm:h-16 md:h-20"
+                      : b.name === "HDFC Bank"
+                      ? "h-8 sm:h-10 md:h-11"
                       : "h-10 sm:h-12 md:h-14"
                   }`}
                 />
@@ -88,34 +89,7 @@ export default function Work() {
       {/* CASE STUDIES */}
       <section className="mx-auto max-w-[1200px] px-4 py-12 sm:px-5 sm:py-16 lg:py-20">
         <SectionHeading title="Case Study Snippet" />
-        <div className="mt-8 grid gap-6 sm:mt-10 sm:grid-cols-2 md:grid-cols-3">
-          {caseStudies.map((c, i) => (
-            <div
-              key={i}
-              className="overflow-hidden rounded-3xl border border-blue-100 bg-[#F0F6FF] p-4 shadow-sm transition hover:shadow-md"
-            >
-              <div className="relative h-44 w-full overflow-hidden rounded-2xl">
-                <img
-                  src={c.image}
-                  alt={c.title}
-                  className="h-full w-full object-cover"
-                />
-                <span className="absolute left-3 top-3 rounded-full bg-white/80 px-3 py-1 text-xs font-medium text-gray-700 backdrop-blur-md">
-                  Case Study {c.id}
-                </span>
-              </div>
-              <div className="p-2 pt-4">
-                <h3 className="mb-2 font-heading text-lg font-bold text-gray-900">
-                  {c.title} Challenge:
-                </h3>
-                <p className="text-sm leading-relaxed text-gray-600">{c.challenge}</p>
-                <a href="#" className="mt-4 flex items-center gap-1 text-sm font-semibold text-sky-600 hover:underline">
-                  Read More &rarr;
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
+        <CaseStudies />
       </section>
 
       {/* INDUSTRIES */}

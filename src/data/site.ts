@@ -133,6 +133,12 @@ export const caseStudies = [
     title: "Tata Power Solar",
     challenge:
       "Technical knowledge and instructor-led training content for a specialised workforce dealing with complex solar energy systems",
+    approach:
+      "We mapped each role working on live solar installations to the technical competencies it needs, then broke complex topics like string sizing and fault diagnosis into short, role-based modules.",
+    solution:
+      "A blended programme: self-paced modules for the fundamentals, instructor-led sessions for hands-on practice, with animated explanations, scenario practice and knowledge checks in every module.",
+    outcome:
+      "Trainers work from one version-controlled curriculum, and new hires follow a defined path from fundamentals to field-ready.",
     image:
       "https://images.pexels.com/photos/4320449/pexels-photo-4320449.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
   },
@@ -141,6 +147,12 @@ export const caseStudies = [
     title: "Tata Power Renewable Energy",
     challenge:
       "Deploying consistent, trackable learning content across their internal Gyankosh LMS for a large and dispersed workforce",
+    approach:
+      "With learners spread across wind and solar sites, consistency mattered more than volume: one content standard, one assessment standard, one place to see completion.",
+    solution:
+      "SCORM-compliant modules published to the Gyankosh LMS as role-based learning paths, with question banks and assessments aligned to each module and results flowing back to the LMS.",
+    outcome:
+      "The same learning experience reaches every location, and completion is tracked across a dispersed workforce in one place.",
     image:
       "https://images.pexels.com/photos/148361/pexels-photo-148361.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
   },
@@ -149,6 +161,12 @@ export const caseStudies = [
     title: "Jiva Ayurveda",
     challenge:
       "Deploying consistent, trackable learning content across their internal Gyankosh LMS for a large and dispersed workforce",
+    approach:
+      "We mapped the knowledge each role needs — product and treatment understanding, internal process — and built the content around how it is used in a real consultation.",
+    solution:
+      "Bite-sized modules with visual explanations of products and protocols, reinforced by scenarios and knowledge checks, delivered through their internal Gyankosh LMS.",
+    outcome:
+      "A shared baseline of product and process knowledge across locations, with training progress visible in one place.",
     image:
       "https://images.pexels.com/photos/5480036/pexels-photo-5480036.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
   },
