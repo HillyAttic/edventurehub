@@ -93,6 +93,11 @@ export default function Home() {
               className="h-12 object-contain sm:h-16 md:h-20"
             />
             <img
+              src="/images/hdfc-bank-logo.svg"
+              alt="HDFC Bank"
+              className="h-8 object-contain sm:h-10 md:h-11"
+            />
+            <img
               src="/images/Reliance_logo.png"
               alt="Reliance"
               className="h-24 object-contain sm:h-32 md:h-48"
