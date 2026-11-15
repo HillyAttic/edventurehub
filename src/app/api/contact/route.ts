@@ -1,7 +1,5 @@
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 const esc = (s: string) =>
   s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]!);
 
@@ -11,6 +9,12 @@ export async function POST(req: Request) {
   if (typeof name !== "string" || !name.trim() || typeof email !== "string" || !email.includes("@")) {
     return Response.json({ error: "Name and a valid email are required." }, { status: 400 });
   }
+
+  // ponytail: built per-request so a missing env var fails at runtime, not at build time.
+  if (!process.env.RESEND_API_KEY) {
+    return Response.json({ error: "Email service not configured." }, { status: 500 });
+  }
+  const resend = new Resend(process.env.RESEND_API_KEY);
 
   const row = (label: string, value?: string) =>
     value ? `<tr><td style="padding:4px 12px 4px 0;color:#666">${label}</td><td>${esc(value)}</td></tr>` : "";
