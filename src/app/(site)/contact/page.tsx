@@ -8,7 +8,6 @@ import { useState, type FormEvent, type SVGProps } from "react";
 /* ------------------------------------------------------------------ */
 
 const SERVICES = [
-  "LMS Setup",
   "SCORM Modules",
   "Gamified Learning",
   "ILT/VILT Decks",
@@ -123,12 +122,24 @@ function HeroSection() {
 
 function ContactSection() {
   const [service, setService] = useState("");
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
-  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSent(true);
-    // TODO: wire this to your API / email service
+    const form = e.currentTarget;
+    setStatus("sending");
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(Object.fromEntries(new FormData(form))),
+    }).catch(() => null);
+    if (res?.ok) {
+      setStatus("sent");
+      form.reset();
+      setService("");
+    } else {
+      setStatus("error");
+    }
   };
 
   return (
@@ -200,13 +211,24 @@ function ContactSection() {
 
           <button
             type="submit"
-            className="relative mt-6 w-full rounded-lg bg-gradient-to-r from-[#150F66] via-[#1223C4] to-[#0B4AE0] py-3.5 text-sm font-bold text-white shadow-lg shadow-blue-900/20 transition hover:brightness-110"
+            disabled={status === "sending"}
+            className="relative mt-6 w-full rounded-lg bg-gradient-to-r from-[#150F66] via-[#1223C4] to-[#0B4AE0] py-3.5 text-sm font-bold text-white shadow-lg shadow-blue-900/20 transition hover:brightness-110 disabled:opacity-60"
           >
-            {sent ? "Message Sent ✓" : "Send Message"}
+            {status === "sending" ? "Sending…" : status === "sent" ? "Message Sent ✓" : "Send Message"}
             <span className="absolute right-2 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[#0B4AE0]">
               <SendIcon />
             </span>
           </button>
+
+          {status === "error" && (
+            <p className="mt-3 text-center text-xs font-medium text-red-600">
+              Something went wrong. Please try again or email us at{" "}
+              <a href="mailto:admin@edventurehub.com" className="underline">
+                admin@edventurehub.com
+              </a>
+              .
+            </p>
+          )}
 
           <p className="mt-4 flex items-center justify-center gap-1.5 text-center text-xs text-[#8A93A3]">
             <LockIcon /> We respect your privacy. Your information is safe with us.

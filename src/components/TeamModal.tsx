@@ -4,19 +4,19 @@ import { useRef } from "react";
 import { X } from "lucide-react";
 
 const TEAM = [
-  { name: "Aruna", email: "aruna@edventurehub.com" },
-  { name: "Ayushi Bhatt", email: "ayushi@edventurehub.com" },
-  { name: "Bishal Saha", email: "bishal@edventurehub.com" },
-  { name: "Brindha", email: "brindha@edventurehub.com" },
-  { name: "Fatima Hasan", email: "fatima@edventurehub.com" },
-  { name: "Kalpana", email: "kalpana@edventurehub.com" },
-  { name: "Madeeha", email: "madeeha@edventurehub.com" },
-  { name: "Md Shakir", email: "shakir@edventurehub.com" },
-  { name: "Paritosh Jain", email: "admin@edventurehub.com" },
-  { name: "Rajeshwari", email: "rajeshwari@edventurehub.com" },
-  { name: "Statha Paul", email: "statha@edventurehub.com" },
-  { name: "Vartika Jain", email: "vartika@edventurehub.com" },
-  { name: "Vignesh K", email: "vignesh@edventurehub.com" },
+  { name: "Paritosh Jain", role: "Finance Head", email: "admin@edventurehub.com", primary: true },
+  { name: "Vartika Jain", role: "Founder, ID", email: "vartika@edventurehub.com", primary: true },
+  { name: "Aruna", role: "Jr. SL Developer", email: "aruna@edventurehub.com" },
+  { name: "Ayushi Bhatt", role: "Storyline Developer", email: "ayushi@edventurehub.com" },
+  { name: "Bishal Saha", role: "Storyline Developer", email: "bishal@edventurehub.com" },
+  { name: "Brindha", role: "Team Lead, SL Developer", email: "brindha@edventurehub.com" },
+  { name: "Fatima Hasan", role: "Graphic Designer", email: "fatima@edventurehub.com" },
+  { name: "Kalpana", role: "Storyline Developer", email: "kalpana@edventurehub.com" },
+  { name: "Madeeha", role: "Team Lead, Graphic Designer", email: "madeeha@edventurehub.com" },
+  { name: "Md Shakir", role: "Motion Graphic Artist", email: "shakir@edventurehub.com" },
+  { name: "Rajeshwari", role: "Instructional Designer", email: "rajeshwari@edventurehub.com" },
+  { name: "Statha Paul", role: "Instructional Designer", email: "statha@edventurehub.com" },
+  { name: "Vignesh K", role: "Sr. Motion Graphic Designer", email: "vignesh@edventurehub.com" },
 ];
 
 export default function TeamModal() {
@@ -52,7 +52,11 @@ export default function TeamModal() {
           {TEAM.map((member) => (
             <div
               key={member.email}
-              className="flex items-center gap-3 rounded-2xl border border-gray-100 bg-[#FFFDF5] px-3 py-2.5"
+              className={`flex items-center gap-3 rounded-2xl border px-3 py-2.5 ${
+                member.primary
+                  ? "border-purple-300 bg-purple-50 ring-1 ring-purple-200"
+                  : "border-gray-100 bg-[#FFFDF5]"
+              }`}
             >
               <img
                 src="/icons/services/user-circle-svgrepo-com.svg"
@@ -61,12 +65,18 @@ export default function TeamModal() {
               />
               <div className="min-w-0 text-left">
                 <p className="truncate text-sm font-semibold">{member.name}</p>
+                <p className="truncate text-xs font-medium text-purple-700">{member.role}</p>
                 <a
                   href={`mailto:${member.email}`}
                   className="block truncate text-xs text-gray-500 hover:text-purple-600"
                 >
                   {member.email}
                 </a>
+                {member.primary && (
+                  <span className="mt-1 inline-block rounded-full bg-purple-600 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white">
+                    Primary contact
+                  </span>
+                )}
               </div>
             </div>
           ))}

@@ -12,6 +12,10 @@ const brandLogos: { name: string; img: string }[] = [
     img: "/images/Tata Power_logo.png",
   },
   {
+    name: "Tata Motors",
+    img: "/images/tata-motors-logo.png",
+  },
+  {
     name: "HDFC Bank",
     img: "/images/hdfc-bank-logo.svg",
   },

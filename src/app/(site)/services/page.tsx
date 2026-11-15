@@ -1,7 +1,9 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { X } from "lucide-react";
 import { Badge } from "@/components/UI";
 
 type Service = {
@@ -15,10 +17,10 @@ type Service = {
 const SERVICES: Service[] = [
   {
     no: "01",
-    title: "LMS Setup & Management",
+    title: "Learning Portal Setup & Deployment",
     description:
-      "Set up, configure, and launch your Learning Management System with seamless integrations and reporting.",
-    icon: "/icons/services/lms.png",
+      "Design, build, and launch a branded learning portal with seamless integrations and reporting.",
+    icon: "/icons/services/portal.png",
     emoji: "🖥️",
   },
   {
@@ -119,10 +121,11 @@ const SERVICES: Service[] = [
   },
 ];
 
-function ArrowButton({ label }: { label: string }) {
+function ArrowButton({ label, onClick }: { label: string; onClick?: () => void }) {
   return (
     <button
       type="button"
+      onClick={onClick}
       aria-label={label}
       className="flex h-11 w-11 items-center justify-center rounded-full border border-[#E4E4EC] bg-white text-[#8B3DFF] shadow-[0_1px_2px_rgba(23,23,43,0.05)] transition-all duration-300 group-hover:border-transparent group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-purple group-hover:text-white"
     >
@@ -164,7 +167,13 @@ function IconTile({ service }: { service: Service }) {
   );
 }
 
-function ServiceCard({ service }: { service: Service }) {
+function ServiceCard({
+  service,
+  onOpen,
+}: {
+  service: Service;
+  onOpen: (service: Service) => void;
+}) {
   return (
     <article className="card-hover group relative flex flex-col rounded-[28px] border border-[#E4E4EC] bg-white px-3 pb-2 pt-3 shadow-[0_2px_12px_rgba(23,23,43,0.05)] sm:px-2.5 sm:pt-4">
       <IconTile service={service} />
@@ -180,13 +189,19 @@ function ServiceCard({ service }: { service: Service }) {
       </p>
 
       <div className="absolute bottom-[46px] right-2">
-        <ArrowButton label={`View details: ${service.title}`} />
+        <ArrowButton label={`View details: ${service.title}`} onClick={() => onOpen(service)} />
       </div>
     </article>
   );
 }
 
-function ServiceCardWide({ service }: { service: Service }) {
+function ServiceCardWide({
+  service,
+  onOpen,
+}: {
+  service: Service;
+  onOpen: (service: Service) => void;
+}) {
   return (
     <article className="card-hover group flex w-full max-w-[570px] flex-col items-start gap-4 rounded-[28px] border border-[#E4E4EC] bg-white px-4 py-5 shadow-[0_2px_12px_rgba(23,23,43,0.05)] sm:flex-row sm:items-center sm:gap-8 sm:px-6 sm:py-4 md:gap-11 md:pl-[46px] md:pr-2.5">
       <IconTile service={service} />
@@ -204,13 +219,23 @@ function ServiceCardWide({ service }: { service: Service }) {
       </div>
 
       <div className="self-end sm:self-auto">
-        <ArrowButton label={`View details: ${service.title}`} />
+        <ArrowButton label={`View details: ${service.title}`} onClick={() => onOpen(service)} />
       </div>
     </article>
   );
 }
 
 export default function Services() {
+  const [active, setActive] = useState<Service | null>(null);
+  const dialogRef = useRef<HTMLDialogElement>(null);
+
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    if (!dialog) return;
+    if (active) dialog.showModal();
+    else dialog.close();
+  }, [active]);
+
   return (
     <div>
       {/* HERO */}
@@ -246,16 +271,56 @@ export default function Services() {
           {/* First 12 cards fill the 4-column grid */}
           <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {SERVICES.slice(0, 12).map((service) => (
-              <ServiceCard key={service.no} service={service} />
+              <ServiceCard key={service.no} service={service} onOpen={setActive} />
             ))}
           </div>
 
           {/* 13th card — wide, horizontal, centered */}
           <div className="mt-6 flex justify-center">
-            <ServiceCardWide service={SERVICES[12]} />
+            <ServiceCardWide service={SERVICES[12]} onOpen={setActive} />
           </div>
         </div>
       </section>
+
+      <dialog
+        ref={dialogRef}
+        onClose={() => setActive(null)}
+        onClick={(e) => e.target === e.currentTarget && dialogRef.current?.close()}
+        className="m-auto w-[calc(100%-2rem)] max-w-lg rounded-[28px] bg-white p-0 text-left text-gray-900 shadow-2xl backdrop:bg-black/50"
+      >
+        {active && (
+          <div className="relative">
+            <button
+              type="button"
+              onClick={() => dialogRef.current?.close()}
+              aria-label="Close"
+              className="absolute right-4 top-4 rounded-full p-1.5 text-gray-500 hover:bg-gray-100 hover:text-gray-900"
+            >
+              <X className="h-5 w-5" />
+            </button>
+            <div className="px-6 pb-6 pt-6 sm:px-8">
+              <IconTile service={active} />
+              <p className="mt-5 text-lg font-extrabold leading-none text-[#7C3AED]">
+                {active.no}
+              </p>
+              <h2 className="mt-2 pr-8 font-heading text-2xl font-bold leading-tight text-ink">
+                {active.title}
+              </h2>
+              <p className="mt-3 text-[15px] leading-relaxed text-[#808595]">
+                {active.description}
+              </p>
+              <Link
+                href="/contact"
+                onClick={() => dialogRef.current?.close()}
+                className="mt-6 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary to-purple px-5 py-2.5 text-sm font-semibold text-white transition hover:opacity-90"
+              >
+                Book a free Discovery call
+                <span aria-hidden>&rarr;</span>
+              </Link>
+            </div>
+          </div>
+        )}
+      </dialog>
 
     </div>
   );

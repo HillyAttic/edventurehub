@@ -93,6 +93,11 @@ export default function Home() {
               className="h-12 object-contain sm:h-16 md:h-20"
             />
             <img
+              src="/images/tata-motors-logo.png"
+              alt="Tata Motors"
+              className="h-12 object-contain sm:h-16 md:h-20"
+            />
+            <img
               src="/images/hdfc-bank-logo.svg"
               alt="HDFC Bank"
               className="h-8 object-contain sm:h-10 md:h-11"
@@ -157,7 +162,7 @@ export default function Home() {
           <div className="mt-8 rounded-2xl border border-slate-200 bg-white px-4 py-6 sm:mt-10 sm:px-6 sm:py-8">
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-6">
               {[
-                { icon: Monitor, label: "LMS Setup & Deployment", color: "text-blue-600" },
+                { icon: Monitor, label: "Learning Portal Setup & Deployment", color: "text-blue-600" },
                 { icon: LayoutGrid, label: "SCORM Modules", color: "text-purple-600" },
                 { icon: Gamepad2, label: "Gamified Learning", color: "text-blue-600" },
                 { icon: Presentation, label: "ILT / VILT Decks", color: "text-purple-600" },
