@@ -105,14 +105,6 @@ const SERVICES: Service[] = [
   },
   {
     no: "12",
-    title: "Learning Portal Creation",
-    description:
-      "Branded learning portals that bring together your content in one seamless hub.",
-    icon: "/icons/services/portal.png",
-    emoji: "🚀",
-  },
-  {
-    no: "13",
     title: "Promotional & Buzz Videos",
     description:
       "High-energy promotional and buzz videos that build excitement for new launches.",
@@ -195,36 +187,6 @@ function ServiceCard({
   );
 }
 
-function ServiceCardWide({
-  service,
-  onOpen,
-}: {
-  service: Service;
-  onOpen: (service: Service) => void;
-}) {
-  return (
-    <article className="card-hover group flex w-full max-w-[570px] flex-col items-start gap-4 rounded-[28px] border border-[#E4E4EC] bg-white px-4 py-5 shadow-[0_2px_12px_rgba(23,23,43,0.05)] sm:flex-row sm:items-center sm:gap-8 sm:px-6 sm:py-4 md:gap-11 md:pl-[46px] md:pr-2.5">
-      <IconTile service={service} />
-
-      <div className="min-w-0 flex-1">
-        <p className="text-lg font-extrabold leading-none text-[#7C3AED]">
-          {service.no}
-        </p>
-        <h3 className="mt-1.5 font-heading text-xl font-bold leading-tight text-ink sm:text-2xl">
-          {service.title}
-        </h3>
-        <p className="mt-2 line-clamp-2 text-[14px] leading-[1.4] text-[#808595] sm:text-[15px]">
-          {service.description}
-        </p>
-      </div>
-
-      <div className="self-end sm:self-auto">
-        <ArrowButton label={`View details: ${service.title}`} onClick={() => onOpen(service)} />
-      </div>
-    </article>
-  );
-}
-
 export default function Services() {
   const [active, setActive] = useState<Service | null>(null);
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -268,16 +230,10 @@ export default function Services() {
             Services
           </h2>
 
-          {/* First 12 cards fill the 4-column grid */}
           <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {SERVICES.slice(0, 12).map((service) => (
+            {SERVICES.map((service) => (
               <ServiceCard key={service.no} service={service} onOpen={setActive} />
             ))}
-          </div>
-
-          {/* 13th card — wide, horizontal, centered */}
-          <div className="mt-6 flex justify-center">
-            <ServiceCardWide service={SERVICES[12]} onOpen={setActive} />
           </div>
         </div>
       </section>
