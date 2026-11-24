@@ -139,8 +139,7 @@ export const caseStudies = [
       "A blended programme: self-paced modules for the fundamentals, instructor-led sessions for hands-on practice, with animated explanations, scenario practice and knowledge checks in every module.",
     outcome:
       "Trainers work from one version-controlled curriculum, and new hires follow a defined path from fundamentals to field-ready.",
-    image:
-      "https://images.pexels.com/photos/4320449/pexels-photo-4320449.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+    image: "/case study 01.png",
   },
   {
     id: "02",
@@ -153,8 +152,7 @@ export const caseStudies = [
       "SCORM-compliant modules published to the Gyankosh LMS as role-based learning paths, with question banks and assessments aligned to each module and results flowing back to the LMS.",
     outcome:
       "The same learning experience reaches every location, and completion is tracked across a dispersed workforce in one place.",
-    image:
-      "https://images.pexels.com/photos/148361/pexels-photo-148361.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+    image: "/case study 02.png",
   },
   {
     id: "03",
@@ -167,8 +165,7 @@ export const caseStudies = [
       "Bite-sized modules with visual explanations of products and protocols, reinforced by scenarios and knowledge checks, delivered through their internal Gyankosh LMS.",
     outcome:
       "A shared baseline of product and process knowledge across locations, with training progress visible in one place.",
-    image:
-      "https://images.pexels.com/photos/5480036/pexels-photo-5480036.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200",
+    image: "/case study 03.png",
   },
 ];
 
