@@ -136,11 +136,11 @@ export default function Home() {
                 d.highlight ? "ring-1 ring-blue-200" : ""
               }`}
             >
-              <div className={`${d.bg} flex items-center justify-center p-6`}>
+              <div className={`${d.bg} w-full`}>
                 <img
                   src={d.img}
                   alt={d.title}
-                  className="h-48 w-full object-contain"
+                  className="w-full object-contain"
                 />
               </div>
               <div className="p-6">
