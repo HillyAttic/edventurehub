@@ -101,7 +101,7 @@ function HeroSection() {
             </span>
           </h1>
         </div>
-        <div className="relative mx-auto w-full max-w-[640px]">
+        <div className="relative mx-auto w-full max-w-[480px]">
           <Image
             src="/images/hero-illustration.png"
             alt="3D illustration of a designer working on a laptop surrounded by mail, chat and paper-plane icons"
@@ -157,7 +157,7 @@ function ContactSection() {
           <p className="mt-3 max-w-sm text-sm leading-relaxed text-[#5B6472] sm:mt-4 sm:text-[15px]">
             Tell us about your project and we&apos;ll get back to you within 24 hours.
           </p>
-          <div className="relative mt-4 max-w-[420px]">
+          <div className="relative mt-4 max-w-[300px]">
             <Image
               src="/images/mailbox-illustration.png"
               alt="3D illustration of a purple mailbox with a paper plane"

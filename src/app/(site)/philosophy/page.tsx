@@ -1,28 +1,29 @@
 import Image from "next/image";
+import { BookOpen, Zap, BadgeDollarSign, Palette, Search, FileText, Monitor, MessageSquare, CloudDownload } from "lucide-react";
 import { Badge, SectionHeading } from "@/components/UI";
 
 const pillars = [
-  { image: "/images/philosophy/pillar-story.png", title: "Story-First Methodology", active: 0,
+  { Icon: BookOpen, title: "Story-First Methodology", active: 0,
     desc: "Most eLearning fails because it lectures. We design every module around a narrative — characters, scenarios, conflict, resolution. Learning through story is not a trend; it's how the human brain is wired." },
-  { image: "/images/philosophy/pillar-speed.png", title: "Faster Turnaround, Zero Compromise", active: 1,
+  { Icon: Zap, title: "Faster Turnaround, Zero Compromise", active: 1,
     desc: "Speed without sacrifice. Our streamlined production process and experienced team allow us to deliver high-quality modules faster than industry standard — without cutting corners on design or instructional integrity." },
-  { image: "/images/philosophy/pillar-pricing.png", title: "Competitive & Transparent Pricing", active: 2,
+  { Icon: BadgeDollarSign, title: "Competitive & Transparent Pricing", active: 2,
     desc: "Enterprise-quality eLearning shouldn't be exclusive to enterprise budgets. We offer honest, competitive pricing — whether you're an MNC or a growing startup." },
-  { image: "/images/philosophy/pillar-design.png", title: "Design That Elevates", active: 3,
+  { Icon: Palette, title: "Design That Elevates", active: 3,
     desc: "Our graphic designers and video artists don't just make things look good — they make learning feel premium. Visual quality signals credibility and keeps learners engaged." },
 ];
 
 const steps = [
-  { num: "01", image: "/images/philosophy/process-discovery.png", title: "Discovery", desc: "Understand your learning objectives, audience, and constraints",
-    badge: "bg-rose-400", titleColor: "text-rose-500" },
-  { num: "02", image: "/images/philosophy/process-storyboard.png", title: "Storyboard", desc: "Script and structure content with a narrative arc",
-    badge: "bg-violet-400", titleColor: "text-violet-500" },
-  { num: "03", image: "/images/philosophy/process-design.png", title: "Design & Develop", desc: "Build with Storyline, motion graphics, and visual design",
-    badge: "bg-red-400", titleColor: "text-red-500" },
-  { num: "04", image: "/images/philosophy/process-review.png", title: "Review Cycles", desc: "Collaborative feedback and iteration",
-    badge: "bg-orange-400", titleColor: "text-orange-500" },
-  { num: "05", image: "/images/philosophy/process-deliver.png", title: "Deliver", desc: "SCORM package, LMS upload, or as required",
-    badge: "bg-teal-400", titleColor: "text-teal-600" },
+  { num: "01", Icon: Search, title: "Discovery", desc: "Understand your learning objectives, audience, and constraints",
+    badge: "bg-rose-400", titleColor: "text-rose-500", iconColor: "#f43f5e", bg: "bg-rose-50" },
+  { num: "02", Icon: FileText, title: "Storyboard", desc: "Script and structure content with a narrative arc",
+    badge: "bg-violet-400", titleColor: "text-violet-500", iconColor: "#8b5cf6", bg: "bg-violet-50" },
+  { num: "03", Icon: Monitor, title: "Design & Develop", desc: "Build with Storyline, motion graphics, and visual design",
+    badge: "bg-red-400", titleColor: "text-red-500", iconColor: "#ef4444", bg: "bg-red-50" },
+  { num: "04", Icon: MessageSquare, title: "Review Cycles", desc: "Collaborative feedback and iteration",
+    badge: "bg-orange-400", titleColor: "text-orange-500", iconColor: "#f97316", bg: "bg-orange-50" },
+  { num: "05", Icon: CloudDownload, title: "Deliver", desc: "SCORM package, LMS upload, or as required",
+    badge: "bg-teal-400", titleColor: "text-teal-600", iconColor: "#0d9488", bg: "bg-teal-50" },
 ];
 
 export default function Philosophy() {
@@ -55,8 +56,9 @@ export default function Philosophy() {
             {pillars.map((p) => (
               <div key={p.title}
                 className="card-hover flex flex-col items-center rounded-3xl border border-purple-100/70 bg-gradient-to-b from-[#f5f2ff] to-white p-6 text-center shadow-xl shadow-indigo-100/50 sm:p-8">
-                <Image src={p.image} alt="" width={512} height={512}
-                  className="mb-5 h-24 w-24 rounded-full sm:mb-6 sm:h-28 sm:w-28" />
+                <div className="mb-5 flex h-24 w-24 items-center justify-center rounded-full bg-white sm:mb-6 sm:h-28 sm:w-28">
+                  <p.Icon className="h-10 w-10 text-primary" strokeWidth={1.5} />
+                </div>
                 <h3 className="mb-3 font-heading text-lg font-bold">
                   <span className="gradient-text-purple">{p.title}</span>
                 </h3>
@@ -81,8 +83,9 @@ export default function Philosophy() {
           {steps.map((s) => (
             <div key={s.num} className="relative flex flex-col items-center text-center">
               <div className="relative">
-                <Image src={s.image} alt="" width={512} height={512}
-                  className="h-24 w-24 rounded-full sm:h-28 sm:w-28 lg:h-32 lg:w-32" />
+                <div className={`flex h-24 w-24 items-center justify-center rounded-full sm:h-28 sm:w-28 lg:h-32 lg:w-32 ${s.bg}`}>
+                  <s.Icon className="h-10 w-10 sm:h-12 sm:w-12 lg:h-14 lg:w-14" style={{ color: s.iconColor }} fill={s.iconColor} fillOpacity={0.15} strokeWidth={1.8} />
+                </div>
                 <span className={`absolute -top-3 left-1/2 flex h-7 w-7 -translate-x-1/2 items-center justify-center rounded-full ${s.badge} text-[11px] font-bold text-white shadow`}>
                   {s.num}
                 </span>
